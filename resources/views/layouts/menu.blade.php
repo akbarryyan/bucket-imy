@@ -52,24 +52,14 @@
                         <span class="nav-text"> Manage Customers </span>
                    </a>
               </li>
-
+              
               <li class="nav-item">
-                   <a class="nav-link menu-arrow" href="#sidebarCalendar" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCalendar">
+                   <a class="nav-link" href="{{ route('admin.payments') }}">
                         <span class="nav-icon">
-                             <iconify-icon icon="solar:calendar-broken"></iconify-icon>
+                             <iconify-icon icon="solar:card-broken"></iconify-icon>
                         </span>
-                        <span class="nav-text"> Calendar </span>
+                        <span class="nav-text"> Manage Payments </span>
                    </a>
-                   <div class="collapse" id="sidebarCalendar">
-                        <ul class="nav sub-navbar-nav">
-                             <li class="sub-nav-item">
-                                  <a class="sub-nav-link" href="apps-calendar-schedule.html">Schedule</a>
-                             </li>
-                             <li class="sub-nav-item">
-                                  <a class="sub-nav-link" href="apps-calendar-integration.html">Integration</a>
-                             </li>
-                        </ul>
-                   </div>
               </li>
 
               <li class="nav-item">

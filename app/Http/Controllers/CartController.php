@@ -74,13 +74,13 @@ class CartController extends Controller
     {
         $user = Auth::user();
         $cart = $user->cart()->with('items.product')->first();
-        $payment = Payment::first();  // Mengambil informasi rekening tujuan
+        $payments = Payment::all();  // Mengambil semua informasi rekening
 
         if (!$cart || $cart->items->isEmpty()) {
             return redirect()->route('cart.index')->with('error', 'Your cart is empty.');
         }
 
-        return view('cart.checkout', compact('cart', 'payment'));
+        return view('cart.checkout', compact('cart', 'payments'));
     }
 
     public function checkout(Request $request)
@@ -127,3 +127,4 @@ class CartController extends Controller
         return redirect()->route('orders.index')->with('success', 'Order placed successfully.');
     }
 }
+

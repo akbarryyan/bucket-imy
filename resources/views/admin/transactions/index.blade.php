@@ -22,9 +22,6 @@
                                                 <div class="gridjs-th-content">User</div>
                                             </th>
                                             <th class="gridjs-th">
-                                                <div class="gridjs-th-content">Product</div>
-                                            </th>
-                                            <th class="gridjs-th">
                                                 <div class="gridjs-th-content">Quantity</div>
                                             </th>
                                             <th class="gridjs-th">
@@ -44,16 +41,6 @@
                                         <tr class="gridjs-tr">
                                             <td class="gridjs-td">{{ $i }}</td>
                                             <td class="gridjs-td">{{ $transaction->user->name }}</td>
-                                            <td class="gridjs-td">
-                                                @foreach($transaction->orderItems as $item)
-                                                <div class="d-flex align-items-center mb-2">
-                                                    @if ($item->product && $item->product->image)
-                                                        <img src="{{ asset('storage/' . $item->product->image) }}" alt="{{ $item->product->name }}" width="50" class="me-2">
-                                                    @endif
-                                                    <div>{{ $item->product ? $item->product->name : 'Unknown Product' }} (x{{ $item->quantity }})</div>
-                                                </div>
-                                                @endforeach
-                                            </td>
                                             <td class="gridjs-td">{{ $transaction->orderItems->sum('quantity') }}</td>
                                             <td class="gridjs-td">Rp. {{ number_format($transaction->orderItems->sum(fn($item) => $item->quantity * $item->price, 0)) }}</td>
                                             <td class="gridjs-td text-capitalize"> <span class="status-{{ strtolower($transaction->status) }}"> {{ $transaction->status }} </span> </td>
@@ -87,29 +74,47 @@
                                         <div id="transaction-user" class="form-control"></div>
                                     </div>
                                     <div id="transaction-items" class="mb-3"></div>
-                                    <div class="mb-3">
-                                        <label for="transaction-total-quantity" class="form-label"><strong>Total Quantity:</strong></label>
-                                        <div id="transaction-total-quantity" class="form-control"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="transaction-total-price" class="form-label"><strong>Total Price:</strong></label>
-                                        <div id="transaction-total-price" class="form-control"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="transaction-total-price" class="form-label"><strong>Delivery Time:</strong></label>
-                                        <div id="transaction-delivery-time" class="form-control"></div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="transaction-total-quantity" class="form-label"><strong>Total Quantity:</strong></label>
+                                                <div id="transaction-total-quantity" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="transaction-total-price" class="form-label"><strong>Total Price:</strong></label>
+                                                <div id="transaction-total-price" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="transaction-total-price" class="form-label"><strong>Delivery Time:</strong></label>
+                                                <div id="transaction-delivery-time" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="transaction-payment-proof" class="form-label"><strong>Payment Proof:</strong></label>
+                                                <a id="transaction-payment-proof" class="form-control" href="#" target="_blank">Lihat Bukti</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="transaction-shipping-method" class="form-label"><strong>Shipping Method:</strong></label>
+                                                <div id="transaction-shipping-method" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="transaction-payment-method" class="form-label"><strong>Payment Method:</strong></label>
+                                                <div id="transaction-payment-method" class="form-control text-capitalize"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="transaction-shipping-address" class="form-label"><strong>Shipping Address:</strong></label>
                                         <div id="transaction-shipping-address" class="form-control"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="transaction-shipping-method" class="form-label"><strong>Shipping Method:</strong></label>
-                                        <div id="transaction-shipping-method" class="form-control"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="transaction-payment-proof" class="form-label"><strong>Payment Proof:</strong></label>
-                                        <a id="transaction-payment-proof" class="form-control" href="#" target="_blank">Lihat Bukti</a>
                                     </div>
                                 </div>
                             </div>
@@ -200,6 +205,7 @@
         
         document.getElementById('transaction-shipping-address').textContent = transaction.shipping_address;
         document.getElementById('transaction-shipping-method').textContent = transaction.shipping_method === 'pickup' ? 'Pick Up' : 'Courier';
+        document.getElementById('transaction-payment-method').textContent = transaction.payment_method;
         document.getElementById('transaction-payment-proof').href = `/storage/${transaction.payment_proof}`;
     }
 

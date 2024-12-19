@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductUserController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\Admin\PaymentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,32 +25,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
     Route::resource('transactions', TransactionController::class);
+    Route::get('payments', [PaymentController::class, 'showPayments'])->name('payments'); Route::post('payments', [PaymentController::class, 'storePayment'])->name('payments.store'); Route::put('payments/{id}', [PaymentController::class, 'updatePayment'])->name('payments.update'); Route::delete('payments/{id}', [PaymentController::class, 'destroyPayment'])->name('payments.destroy');
 });
+
 
 Route::get('admin/login', [AuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('admin/login', [AuthController::class, 'login'])->name('admin.login.submit');
 Route::post('admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
-
-
-// Route::get('login', function() {
-//     return 'Login Page';
-// })->name('login');
-
-// Route::prefix('cart')->name('cart.')->middleware('auth')->group(function () {
-//     Route::post('add/{productId}', [CartController::class, 'addToCart'])->name('add');
-//     Route::get('/', [CartController::class, 'index'])->name('index');
-// });
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('products', [ProductController::class, 'index'])->name('products.index');
-//     Route::prefix('cart')->name('cart.')->group(function () {
-//         Route::post('add/{productId}', [CartController::class, 'addToCart'])->name('add');
-//         Route::get('/', [CartController::class, 'index'])->name('index');
-//         Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
-//         Route::delete('remove/{itemId}', [CartController::class, 'remove'])->name('remove');
-//     });
-//     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
-// });
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('cart')->name('cart.')->group(function () {
@@ -68,20 +50,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout.post');
 
 });
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::prefix('cart')->name('cart.')->group(function () {
-//         Route::post('add/{productId}', [App\Http\Controllers\CartController::class, 'addToCart'])->name('add');
-//         Route::get('/', [App\Http\Controllers\CartController::class, 'index'])->name('index');
-//         Route::post('checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
-//         Route::delete('remove/{itemId}', [App\Http\Controllers\CartController::class, 'remove'])->name('remove');
-//     });
-    
-//     // Rute untuk menampilkan pesanan
-//     Route::get('orders', [App\Http\Controllers\OrderController::class, 'index'])->name('orders.index');
-// });
-
-
 
 // Rute untuk login dan register pengguna
 Route::get('user/login', [UserAuthController::class, 'showLoginForm'])->name('user.login');
