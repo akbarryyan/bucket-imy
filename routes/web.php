@@ -56,13 +56,16 @@ Route::middleware(['auth'])->group(function () {
         Route::post('add/{productId}', [CartController::class, 'addToCart'])->name('add');
         Route::get('/', [CartController::class, 'index'])->name('index');
         Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
-        Route::delete('remove/{itemId}', [CartController::class, 'remove'])->name('remove');
     });
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('dashboard', function() {
         return view('dashboard');
     })->name('dashboard.user');
     Route::get('products', [ProductUserController::class, 'index'])->name('products.index');
+    Route::get('cart/data', [CartController::class, 'getCartData'])->name('cart.data');
+    Route::delete('cart/remove/{itemId}', [CartController::class, 'remove'])->name('cart.remove');
+
+
 });
 
 // Route::middleware(['auth'])->group(function () {

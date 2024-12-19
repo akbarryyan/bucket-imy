@@ -52,37 +52,46 @@
           <div class="tab-pane fade show active" id="grid" role="tabpanel">
               <div class="row">
                 @foreach($products as $product)
-                  <div class="col-lg-3 col-sm-6">
-                      <div class="single-product">
-                          <div class="product-image">
-                              <a href="shop-single.html">
-                                @if ($product->image)
-                                  <img src="{{ asset('storage/' . $product->image) }}" alt="">
-                                @endif
-                              </a>
+<div class="col-lg-3 col-sm-6">
+    <div class="single-product">
+        <div class="product-image">
+            <a href="shop-single.html">
+                @if ($product->image)
+                <img src="{{ asset('storage/' . $product->image) }}" alt="">
+                @endif
+            </a>
 
-                              <div class="action-links">
-                                  <ul>
-                                      <li><a href="cart.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
-                                      <li><a href="compare.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
-                                      <li><a href="wishlist.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                      <li><a href="javascript:void(0);" data-bs-tooltip="tooltip" data-bs-placement="left" title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-eye"></i></a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div class="product-content text-center">
-                              <div class="rating">
-                                  <div class="rating-on" style="width: 80%;"></div>
-                              </div>
-                              <h4 class="product-name"><a href="shop-single.html">{{ $product->name }}</a></h4>
-                              <div class="price-box">
-                                  <span class="current-price">Rp. {{ number_format($product->price, 0) }}</span>
-                                  <span class="old-price">Rp. {{ number_format($product->price + 30000, 0) }}</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  @endforeach
+            <div class="action-links">
+                <ul>
+                    <li>
+                        <form action="{{ route('cart.add', $product->id) }}" method="POST" class="add-to-cart-form">
+                            @csrf
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="button" class="add-to-cart-btn" data-product-id="{{ $product->id }}">
+                                <i class="icon-shopping-bag"></i>
+                            </button>
+                        </form>
+                    </li>
+                    <li><a href="compare.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
+                    <li><a href="wishlist.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="icon-heart"></i></a></li>
+                    <li><a href="javascript:void(0);" data-bs-tooltip="tooltip" data-bs-placement="left" title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-eye"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="product-content text-center">
+            <div class="rating">
+                <div class="rating-on" style="width: 80%;"></div>
+            </div>
+            <h4 class="product-name"><a href="shop-single.html">{{ $product->name }}</a></h4>
+            <div class="price-box">
+                <span class="current-price">Rp. {{ number_format($product->price, 0) }}</span>
+                <span class="old-price">Rp. {{ number_format($product->price + 30000, 0) }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+
               </div>
           </div>
           <div class="tab-pane fade" id="list" role="tabpanel">

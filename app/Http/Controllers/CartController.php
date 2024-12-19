@@ -43,14 +43,34 @@ class CartController extends Controller
             ]);
         }
 
+        if ($request->ajax()) {
+            $cart->load('items.product');
+            return response()->json(['cart' => $cart]);
+        }
+        
         return redirect()->route('cart.index')->with('success', 'Product added to cart successfully.');
     }
 
+    public function getCartData()
+    {
+        $user = Auth::user();
+        $cart = $user ? $user->cart()->with('items.product')->first() : null;
+
+        return response()->json(['cart' => $cart]);
+    }
+
+
     public function remove($itemId)
     {
-        CartItem::findOrFail($itemId)->delete();
-        return redirect()->route('cart.index')->with('success', 'Product removed from cart.');
+        $cartItem = CartItem::findOrFail($itemId);
+        $cart = $cartItem->cart;
+        $cartItem->delete();
+
+        $cart->load('items.product');
+        return response()->json(['cart' => $cart]);
     }
+
+
 
     public function checkout(Request $request)
     {

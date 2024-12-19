@@ -183,91 +183,25 @@
                 </div>
                 <div class="header-account-list dropdown mini-cart">
                   <a href="#" role="button" data-bs-toggle="dropdown">
-                    <i class="icon-shopping-bag"></i>
-                    <span class="item-count">3</span>
+                      <i class="icon-shopping-bag"></i>
+                      <span class="item-count">0</span>
                   </a>
-
+              
                   <ul class="dropdown-menu">
-                    <li class="product-cart">
-                      <div class="single-cart-box">
-                        <div class="cart-img">
-                          <a href="shop-single.html"
-                            ><img
-                              src="{{ asset('assets/user/images/cart/cart-1.jpg') }}"
-                              alt=""
-                          /></a>
-                          <span class="pro-quantity">1x</span>
-                        </div>
-                        <div class="cart-content">
-                          <h6 class="title">
-                            <a href="shop-single.html">Rock Soapwort</a>
-                          </h6>
-                          <div class="cart-price">
-                            <span class="sale-price">$70.00</span>
-                            <span class="regular-price">$80.00</span>
-                          </div>
-                        </div>
-                        <a href="javascript:void(0);" class="del-icon"
-                          ><i class="fa fa-trash"></i
-                        ></a>
-                      </div>
-                      <div class="single-cart-box">
-                        <div class="cart-img">
-                          <a href="shop-single.html"
-                            ><img
-                              src="{{ asset('assets/user/images/cart/cart-2.jpg') }}"
-                              alt=""
-                          /></a>
-                          <span class="pro-quantity">1x</span>
-                        </div>
-                        <div class="cart-content">
-                          <h6 class="title">
-                            <a href="shop-single.html">Rock Soapwort</a>
-                          </h6>
-                          <div class="cart-price">
-                            <span class="sale-price">$70.00</span>
-                            <span class="regular-price">$80.00</span>
-                          </div>
-                        </div>
-                        <a href="javascript:void(0);" class="del-icon"
-                          ><i class="fa fa-trash"></i
-                        ></a>
-                      </div>
-                      <div class="single-cart-box">
-                        <div class="cart-img">
-                          <a href="shop-single.html"
-                            ><img
-                              src="{{ asset('assets/user/images/cart/cart-3.jpg') }}"
-                              alt=""
-                          /></a>
-                          <span class="pro-quantity">1x</span>
-                        </div>
-                        <div class="cart-content">
-                          <h6 class="title">
-                            <a href="shop-single.html">Rock Soapwort</a>
-                          </h6>
-                          <div class="cart-price">
-                            <span class="sale-price">$70.00</span>
-                            <span class="regular-price">$80.00</span>
-                          </div>
-                        </div>
-                        <a href="javascript:void(0);" class="del-icon"
-                          ><i class="fa fa-trash"></i
-                        ></a>
-                      </div>
-                    </li>
-                    <li class="product-total">
-                      <ul class="cart-total">
-                        <li>Total : <span>$189.00</span></li>
-                      </ul>
-                    </li>
-                    <li class="product-btn">
-                      <a href="checkout.html" class="btn btn-dark d-block"
-                        >Checkout</a
-                      >
-                    </li>
+                      <li class="product-cart" id="mini-cart-items">
+                          <!-- Items will be dynamically inserted here -->
+                      </li>
+                      <li class="product-total">
+                          <ul class="cart-total">
+                              <li>Total : <span id="mini-cart-total"></span></li>
+                          </ul>
+                      </li>
+                      <li class="product-btn">
+                          <a href="checkout.html" class="btn btn-dark d-block">Checkout</a>
+                      </li>
                   </ul>
-                </div>
+              </div>
+              
               </div>
             </div>
           </div>
