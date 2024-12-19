@@ -23,7 +23,7 @@
                   <ul class="slider-btn">
                     <li>
                       <a
-                        href="shop-single.html"
+                        href="{{ route('products.index') }}"
                         class="btn btn-round btn-primary"
                         >Start Shopping</a
                       >
@@ -790,7 +790,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="about-image">
-                <img src="{{ asset('assets/user/images/about/about.jpg') }}" alt="" />
+                <img src="https://outerbloom.com/cdn/shop/files/5_e30f2dc9-d2ea-4474-afe3-b11b2dd2741d_1024x1024.jpg?v=1707464980" alt="" />
               </div>
             </div>
             <div class="col-lg-6">

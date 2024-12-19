@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\CartItem;
 use App\Models\OrderItem;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -59,7 +60,6 @@ class CartController extends Controller
         return response()->json(['cart' => $cart]);
     }
 
-
     public function remove($itemId)
     {
         $cartItem = CartItem::findOrFail($itemId);
@@ -70,14 +70,26 @@ class CartController extends Controller
         return response()->json(['cart' => $cart]);
     }
 
+    public function showCheckoutForm()
+    {
+        $user = Auth::user();
+        $cart = $user->cart()->with('items.product')->first();
+        $payment = Payment::first();  // Mengambil informasi rekening tujuan
 
+        if (!$cart || $cart->items->isEmpty()) {
+            return redirect()->route('cart.index')->with('error', 'Your cart is empty.');
+        }
+
+        return view('cart.checkout', compact('cart', 'payment'));
+    }
 
     public function checkout(Request $request)
     {
         $request->validate([
             'shipping_address' => 'required|string|max:255',
             'shipping_method' => 'required|in:pickup,courier',
-            'payment_proof' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'payment_method' => 'required|in:cash,bank',
+            'payment_proof' => 'required_if:payment_method,bank|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'delivery_time' => 'required|date_format:Y-m-d\TH:i',
         ]);
 
@@ -88,13 +100,14 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('error', 'Your cart is empty.');
         }
 
-        $paymentProofPath = $request->file('payment_proof')->store('payment_proofs', 'public');
+        $paymentProofPath = $request->payment_method === 'bank' ? $request->file('payment_proof')->store('payment_proofs', 'public') : null;
 
         $order = Order::create([
             'user_id' => $user->id,
             'status' => 'pending',
             'shipping_address' => $request->shipping_address,
             'shipping_method' => $request->shipping_method,
+            'payment_method' => $request->payment_method,
             'payment_proof' => $paymentProofPath,
             'delivery_time' => $request->delivery_time,
         ]);

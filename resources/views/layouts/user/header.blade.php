@@ -14,7 +14,7 @@
             <div class="site-main-nav">
               <nav class="site-nav">
                 <ul>
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="{{ route('dashboard.user') }}">Home</a></li>
                   <li>
                     <a href="#">Shop <span class="new">New</span></a>
 
@@ -197,7 +197,7 @@
                           </ul>
                       </li>
                       <li class="product-btn">
-                          <a href="checkout.html" class="btn btn-dark d-block">Checkout</a>
+                          <a href="{{ route('cart.checkout') }}" class="btn btn-dark d-block">Checkout</a>
                       </li>
                   </ul>
               </div>

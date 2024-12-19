@@ -55,7 +55,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('cart')->name('cart.')->group(function () {
         Route::post('add/{productId}', [CartController::class, 'addToCart'])->name('add');
         Route::get('/', [CartController::class, 'index'])->name('index');
-        Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
+        // Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
     });
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('dashboard', function() {
@@ -64,7 +64,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('products', [ProductUserController::class, 'index'])->name('products.index');
     Route::get('cart/data', [CartController::class, 'getCartData'])->name('cart.data');
     Route::delete('cart/remove/{itemId}', [CartController::class, 'remove'])->name('cart.remove');
-
+    Route::get('cart/checkout', [CartController::class, 'showCheckoutForm'])->name('cart.checkout');
+    Route::post('cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout.post');
 
 });
 

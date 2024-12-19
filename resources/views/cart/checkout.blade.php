@@ -6,7 +6,7 @@
       <div class="page-banner-content text-center">
           <h2 class="title">Checkout</h2>
           <ol class="breadcrumb justify-content-center">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('dashboard.user') }}">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Checkout</li>
           </ol>
       </div>
@@ -17,7 +17,8 @@
 <!--Start-->
 <div class="checkout-page section-padding-5">
   <div class="container">
-      <form action="#">
+      <form action="{{ route('cart.checkout.post') }}" method="POST" enctype="multipart/form-data">
+          @csrf
           <div class="row">
               <div class="col-lg-7">
                   <div class="checkout-form mt-30">
@@ -26,15 +27,13 @@
                           <h4 class="title">Billing details</h4>
                       </div>
 
-
                       <div class="row">
                           <div class="col-sm-6">
                             <div class="single-select2">
                                 <label>Shipping Method *</label>
-
                                 <div class="form-select2">
-                                    <select class="select2" id="shipping_method" name="shipping_method">
-                                        <option value="0">Select a country…</option>
+                                    <select class="select2" id="shipping_method" name="shipping_method" required>
+                                        <option value="">Select a shipping method...</option>
                                         <option value="pickup">Pickup</option>
                                         <option value="courier">Courier</option>
                                     </select>
@@ -44,20 +43,20 @@
                           <div class="col-sm-6">
                               <div class="single-form">
                                   <label>Delivery/Pickup Time *</label>
-                                  <input type="datetime-local" id="delivery_time" name="delivery_time">
+                                  <input type="datetime-local" id="delivery_time" name="delivery_time" required>
                               </div>
                           </div>
                           <div class="col-sm-12">
                               <div class="single-form">
-                                  <label>Payment Proof</label>
-                                  <input type="file" id="payment_proof" name="payment_proof">
+                                  <label>Payment Proof *</label>
+                                  <input type="file" id="payment_proof" name="payment_proof" required>
                               </div>
                           </div>
                       </div>
 
                       <div class="single-form checkout-note">
                         <label>Shipping Address *</label>
-                        <textarea placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                        <textarea id="shipping_address" name="shipping_address" placeholder="Enter your shipping address..." required></textarea>
                       </div>
 
                   </div>
@@ -77,38 +76,16 @@
                                   </tr>
                               </thead>
                               <tbody>
+                                  @foreach ($cart->items as $item)
                                   <tr>
                                       <td class="Product-name">
-                                          <p>Bodysuit With Long Sleeves × 1</p>
+                                          <p>{{ $item->product->name }} × {{ $item->quantity }}</p>
                                       </td>
                                       <td class="Product-price">
-                                          <p>£150.00</p>
+                                          <p>Rp. {{ number_format($item->quantity * $item->product->price, 0) }}</p>
                                       </td>
                                   </tr>
-                                  <tr>
-                                      <td class="Product-name">
-                                          <p>Classic Polo Shirt × 1</p>
-                                      </td>
-                                      <td class="Product-price">
-                                          <p>£150.00</p>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td class="Product-name">
-                                          <p>Trousers With Side Stripe × 1</p>
-                                      </td>
-                                      <td class="Product-price">
-                                          <p>£150.00</p>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td class="Product-name">
-                                          <p>Biker Jacket × 1</p>
-                                      </td>
-                                      <td class="Product-price">
-                                          <p>£150.00</p>
-                                      </td>
-                                  </tr>
+                                  @endforeach
                               </tbody>
                               <tfoot>
                                   <tr>
@@ -116,7 +93,7 @@
                                           <p>Total</p>
                                       </td>
                                       <td class="total-price">
-                                          <p>£600.00</p>
+                                          <p>Rp. {{ number_format($cart->items->sum(fn($item) => $item->quantity * $item->product->price), 0) }}</p>
                                       </td>
                                   </tr>
                               </tfoot>
@@ -128,10 +105,10 @@
                               <li>
                                   <div class="single-payment">
                                       <div class="payment-radio cus-radio">
-                                          <input type="radio" name="radio" id="bank">
+                                          <input type="radio" name="payment_method" id="bank" value="bank">
                                           <label for="bank"><span></span> Direct bank transfer </label>
 
-                                          <div class="payment-details">
+                                          <div class="payment-details" style="display:none;">
                                               <p>Please send a Check to Store name with Store Street, Store Town, Store State, Store Postcode, Store Country.</p>
                                           </div>
                                       </div>
@@ -140,7 +117,7 @@
                               <li>
                                   <div class="single-payment">
                                       <div class="payment-radio cus-radio">
-                                          <input type="radio" name="radio" id="cash" checked="checked">
+                                          <input type="radio" name="payment_method" id="cash" value="cash" checked="checked">
                                           <label for="cash"><span></span> Cash on Delivery</label>
 
                                           <div class="payment-details">
@@ -152,7 +129,7 @@
                           </ul>
 
                           <div class="checkout-btn">
-                              <a class="btn btn-primary btn-block" href="#">Place Order</a>
+                              <button type="submit" class="btn btn-primary btn-block">Place Order</button>
                           </div>
                       </div>
                   </div>
@@ -163,3 +140,29 @@
 </div>
 <!--End-->
 @endsection
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const bankRadio = document.getElementById('bank');
+    const cashRadio = document.getElementById('cash');
+    const paymentProofInput = document.getElementById('payment_proof').closest('.single-form');
+    const paymentDetails = document.querySelector('.payment-details');
+
+    function togglePaymentProof() {
+        if (bankRadio.checked) {
+            paymentProofInput.style.display = 'block';
+            paymentDetails.style.display = 'block';
+        } else {
+            paymentProofInput.style.display = 'none';
+            paymentDetails.style.display = 'none';
+        }
+    }
+
+    // Inisialisasi tampilan berdasarkan pilihan saat ini
+    togglePaymentProof();
+
+    // Tambahkan event listener ke radio button
+    bankRadio.addEventListener('change', togglePaymentProof);
+    cashRadio.addEventListener('change', togglePaymentProof);
+});
+</script>
