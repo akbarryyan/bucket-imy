@@ -32,6 +32,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('profits/calculate-monthly-profit', [ProfitController::class, 'calculateMonthlyProfit'])->name('calculateMonthlyProfit');
     Route::get('profits/daily-pdf', [ProfitController::class, 'generateDailyProfitPDF'])->name('profits.daily-pdf');
     Route::get('profits/monthly-pdf', [ProfitController::class, 'generateMonthlyProfitPDF'])->name('profits.monthly-pdf');
+    Route::get('sales-data', [DashboardController::class, 'getSalesData'])->name('salesData');
 
 });
 
