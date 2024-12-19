@@ -38,9 +38,9 @@
               <li class="nav-item">
                    <a class="nav-link" href="apps-chat.html">
                         <span class="nav-icon">
-                             <iconify-icon icon="solar:chat-round-call-broken"></iconify-icon>
+                             <iconify-icon icon="solar:floor-lamp-minimalistic-broken"></iconify-icon>
                         </span>
-                        <span class="nav-text"> Chat </span>
+                        <span class="nav-text"> Manage Products </span>
                    </a>
               </li>
 
