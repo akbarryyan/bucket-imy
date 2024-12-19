@@ -1,0 +1,89 @@
+/*--
+/*  4.19 - Contact CSS
+/*----------------------------------------*/
+
+
+.contact-map{
+    & #contact-map{
+        height: 500px;
+        border-width: 100%;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+    }
+}
+
+
+
+.form-message{
+    &.success,
+    &.error{
+        font-size: 16px;
+        color: $black;
+        background: #ddd;
+        padding: 10px 15px;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    &.error{
+        color: #f00;
+    }
+}
+
+.contact-info-content{
+    padding-top: 30px;
+}
+
+.single-contact-info{
+    margin-top: 30px;
+
+    & i{
+        font-size: 30px;
+        color: $heading-color;
+        margin-bottom: 25px;
+    }
+    & .title{
+        font-size: 18px;
+        font-family: $body-font;
+        color: $heading-color;
+        font-weight: 500;
+    }
+    & p{
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+}
+
+
+.contact-form{
+    padding-top: 80px;
+
+    & .single-form{
+        & textarea{
+            height: 180px;
+        }
+
+        & .btn{
+            border-radius: 3px;
+            font-weight: 400;
+            height: 40px;
+            line-height: 38px;
+
+            &:hover{
+                background-color: $primary;
+                border-color: $primary;
+            }
+        }
+    }
+}
+
+
+
+
+
+

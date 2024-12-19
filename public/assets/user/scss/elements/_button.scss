@@ -1,0 +1,773 @@
+/*--
+/*  2.1 - Button CSS
+/*----------------------------------------*/
+.btn-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	margin: -5px;
+	& .btn {
+		margin: 5px;
+	}
+}
+
+// Button
+.btn {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	background-color: transparent;
+	border-color: transparent;
+	color: $body-color;
+	border-radius: 0;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 0px 35px;
+	height: 50px;
+	line-height: 48px;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: none;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: 0;
+
+	&:focus{
+		@include box-shadow (none);
+	}
+	
+	// Responsive
+	@media #{$tablet-device} {
+		&:not([type="submit"]) {
+			height: 44px;
+			line-height: 44px;
+			padding: 0 30px;
+		}
+	}
+	@media #{$large-mobile} {
+		&:not([type="submit"]) {
+			font-size: 12px;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 20px;
+		}
+	}
+	@media #{$small-mobile} {
+		&:not([type="submit"]) {
+			height: 36px;
+			line-height: 36px;
+			padding: 0 20px;
+		}
+	}
+}
+
+// Button Group
+.btn-group {
+	display: inline-flex;
+	flex-wrap: wrap;
+	& .btn {
+		border-radius: 0;
+		&:first-child {
+			border-radius: 4px 0 0 4px;
+		}
+		&:last-child {
+			border-radius: 0 4px 4px 0;
+		}
+	}
+}
+
+// Button Style
+.btn-round {
+	border-radius: 100px;
+}
+.btn-square {
+	border-radius: 0;
+}
+
+// Button With Icon
+[class*="btn-icon-"] {
+	& i {
+		position: absolute;
+		top: 0;
+		width: 60px;
+		height: 60px;
+		line-height: 28px;
+		text-align: center;
+		padding: 15px;
+		background-color: rgba($black, 0.1);
+	}
+}
+.btn-icon-left {
+	padding-left: 69px;
+	& i {
+		left: 0;
+		right: auto;
+	}
+}
+.btn-icon-right {
+	padding-right: 69px;
+	& i {
+		left: auto;
+		right: 0;
+	}
+}
+
+// Boxed Button
+.btn-box {
+	width: 50px;
+	padding: 10px;
+	text-align: center;
+	flex: 1 0 50px;
+	& i {
+		display: block;
+		line-height: 24px;
+	}
+}
+
+// Button Colors
+.btn-primary {
+	background-color: $primary;
+	border-color: $primary;
+	color: $white;
+	
+	&:hover {
+		background-color: darken($primary, 5);
+		border-color: darken($primary, 5);
+	}
+}
+.btn-secondary {
+	background-color: $secondary;
+	border-color: $secondary;
+	color: $white;
+	&:hover {
+		background-color: darken($secondary, 5);
+		border-color: darken($secondary, 5);
+	}
+}
+.btn-success {
+	background-color: $success;
+	border-color: $success;
+	color: $white;
+	&:hover {
+		background-color: darken($success, 5);
+		border-color: darken($success, 5);
+	}
+}
+.btn-danger {
+	background-color: $danger;
+	border-color: $danger;
+	color: $white;
+	&:hover {
+		background-color: darken($danger, 5);
+		border-color: darken($danger, 5);
+	}
+}
+.btn-warning {
+	background-color: $warning;
+	border-color: $warning;
+	color: $heading-color;
+	&:hover {
+		background-color: darken($warning, 5);
+		border-color: darken($warning, 5);
+	}
+}
+.btn-info {
+	background-color: $info;
+	border-color: $info;
+	color: $white;
+	&:hover {
+		background-color: darken($info, 5);
+		border-color: darken($info, 5);
+	}
+}
+.btn-light {
+	background-color: $light;
+	border-color: $light;
+	color: $heading-color;
+	&:hover {
+		background-color: darken($light, 5);
+		border-color: darken($light, 5);
+	}
+}
+.btn-dark {
+	background-color: $dark;
+	border-color: $dark;
+	color: $white;
+	&:hover {
+		background-color: darken($dark, 5);
+		border-color: darken($dark, 5);
+	}
+}
+
+// Button Socail
+
+// Android
+.btn-android {
+	background-color: $android;
+	border-color: $android;
+	color: $white;
+	&:hover {
+		background-color: darken($android, 5);
+		border-color: darken($android, 5);
+	}
+}
+// Apple
+.btn-apple {
+	background-color: $apple;
+	border-color: $apple;
+	color: $white;
+	&:hover {
+		background-color: darken($apple, 5);
+		border-color: darken($apple, 5);
+	}
+}
+// Behance
+.btn-behance {
+	background-color: $behance;
+	border-color: $behance;
+	color: $white;
+	&:hover {
+		background-color: darken($behance, 5);
+		border-color: darken($behance, 5);
+	}
+}
+// Codepen
+.btn-codepen {
+	background-color: $codepen;
+	border-color: $codepen;
+	color: $white;
+	&:hover {
+		background-color: darken($codepen, 5);
+		border-color: darken($codepen, 5);
+	}
+}
+// Dribbble
+.btn-dribbble {
+	background-color: $dribbble;
+	border-color: $dribbble;
+	color: $white;
+	&:hover {
+		background-color: darken($dribbble, 5);
+		border-color: darken($dribbble, 5);
+	}
+}
+// Dropbox
+.btn-dropbox {
+	background-color: $dropbox;
+	border-color: $dropbox;
+	color: $white;
+	&:hover {
+		background-color: darken($dropbox, 5);
+		border-color: darken($dropbox, 5);
+	}
+}
+// Evernote
+.btn-evernote {
+	background-color: $evernote;
+	border-color: $evernote;
+	color: $white;
+	&:hover {
+		background-color: darken($evernote, 5);
+		border-color: darken($evernote, 5);
+	}
+}
+// Facebook
+.btn-facebook {
+	background-color: $facebook;
+	border-color: $facebook;
+	color: $white;
+	&:hover {
+		background-color: darken($facebook, 5);
+		border-color: darken($facebook, 5);
+	}
+}
+// github
+.btn-github {
+	background-color: $github;
+	border-color: $github;
+	color: $white;
+	&:hover {
+		background-color: darken($github, 5);
+		border-color: darken($github, 5);
+	}
+}
+// Google Drive
+.btn-google-drive {
+	background-color: $google-drive;
+	border-color: $google-drive;
+	color: $white;
+	&:hover {
+		background-color: darken($google-drive, 5);
+		border-color: darken($google-drive, 5);
+	}
+}
+// Google Earth
+.btn-google-earth {
+	background-color: $google-earth;
+	border-color: $google-earth;
+	color: $white;
+	&:hover {
+		background-color: darken($google-earth, 5);
+		border-color: darken($google-earth, 5);
+	}
+}
+// Google Glass
+.btn-google-glass {
+	background-color: $google-glass;
+	border-color: $google-glass;
+	color: $white;
+	&:hover {
+		background-color: darken($google-glass, 5);
+		border-color: darken($google-glass, 5);
+	}
+}
+// Google Maps
+.btn-google-maps {
+	background-color: $google-maps;
+	border-color: $google-maps;
+	color: $white;
+	&:hover {
+		background-color: darken($google-maps, 5);
+		border-color: darken($google-maps, 5);
+	}
+}
+// Google Play
+.btn-google-play {
+	background-color: $google-play;
+	border-color: $google-play;
+	color: $white;
+	&:hover {
+		background-color: darken($google-play, 5);
+		border-color: darken($google-play, 5);
+	}
+}
+// Google Plus
+.btn-google-plus {
+	background-color: $google-plus;
+	border-color: $google-plus;
+	color: $white;
+	&:hover {
+		background-color: darken($google-plus, 5);
+		border-color: darken($google-plus, 5);
+	}
+}
+// Google
+.btn-google {
+	background-color: $google;
+	border-color: $google;
+	color: $white;
+	&:hover {
+		background-color: darken($google, 5);
+		border-color: darken($google, 5);
+	}
+}
+// Instagram
+.btn-instagram {
+	background-color: $instagram;
+	border-color: $instagram;
+	color: $white;
+	&:hover {
+		background-color: darken($instagram, 5);
+		border-color: darken($instagram, 5);
+	}
+}
+// CSS 3
+.btn-css3 {
+	background-color: $css3;
+	border-color: $css3;
+	color: $white;
+	&:hover {
+		background-color: darken($css3, 5);
+		border-color: darken($css3, 5);
+	}
+}
+// HTML 5
+.btn-html5 {
+	background-color: $html5;
+	border-color: $html5;
+	color: $white;
+	&:hover {
+		background-color: darken($html5, 5);
+		border-color: darken($html5, 5);
+	}
+}
+// JavaScript
+.btn-javascript {
+	background-color: $javascript;
+	border-color: $javascript;
+	color: $white;
+	&:hover {
+		background-color: darken($javascript, 5);
+		border-color: darken($javascript, 5);
+	}
+}
+// Python
+.btn-python {
+	background-color: $python;
+	border-color: $python;
+	color: $white;
+	&:hover {
+		background-color: darken($python, 5);
+		border-color: darken($python, 5);
+	}
+}
+// Lastfm
+.btn-lastfm {
+	background-color: $lastfm;
+	border-color: $lastfm;
+	color: $white;
+	&:hover {
+		background-color: darken($lastfm, 5);
+		border-color: darken($lastfm, 5);
+	}
+}
+// Linkedin
+.btn-linkedin {
+	background-color: $linkedin;
+	border-color: $linkedin;
+	color: $white;
+	&:hover {
+		background-color: darken($linkedin, 5);
+		border-color: darken($linkedin, 5);
+	}
+}
+// Paypal
+.btn-paypal {
+	background-color: $paypal;
+	border-color: $paypal;
+	color: $white;
+	&:hover {
+		background-color: darken($paypal, 5);
+		border-color: darken($paypal, 5);
+	}
+}
+// Pinterest
+.btn-pinterest {
+	background-color: $pinterest;
+	border-color: $pinterest;
+	color: $white;
+	&:hover {
+		background-color: darken($pinterest, 5);
+		border-color: darken($pinterest, 5);
+	}
+}
+// Pocket
+.btn-pocket {
+	background-color: $pocket;
+	border-color: $pocket;
+	color: $white;
+	&:hover {
+		background-color: darken($pocket, 5);
+		border-color: darken($pocket, 5);
+	}
+}
+// Polymer
+.btn-polymer {
+	background-color: $polymer;
+	border-color: $polymer;
+	color: $white;
+	&:hover {
+		background-color: darken($polymer, 5);
+		border-color: darken($polymer, 5);
+	}
+}
+// RSS
+.btn-rss {
+	background-color: $rss;
+	border-color: $rss;
+	color: $white;
+	&:hover {
+		background-color: darken($rss, 5);
+		border-color: darken($rss, 5);
+	}
+}
+// Share
+.btn-share {
+	background-color: $share;
+	border-color: $share;
+	color: $white;
+	&:hover {
+		background-color: darken($share, 5);
+		border-color: darken($share, 5);
+	}
+}
+// Stackoverflow
+.btn-stackoverflow {
+	background-color: $stackoverflow;
+	border-color: $stackoverflow;
+	color: $white;
+	&:hover {
+		background-color: darken($stackoverflow, 5);
+		border-color: darken($stackoverflow, 5);
+	}
+}
+// Steam
+.btn-steam {
+	background-color: $steam;
+	border-color: $steam;
+	color: $white;
+	&:hover {
+		background-color: darken($steam, 5);
+		border-color: darken($steam, 5);
+	}
+}
+// Twitter
+.btn-twitter {
+	background-color: $twitter;
+	border-color: $twitter;
+	color: $white;
+	&:hover {
+		background-color: darken($twitter, 5);
+		border-color: darken($twitter, 5);
+	}
+}
+// VK
+.btn-vk {
+	background-color: $vk;
+	border-color: $vk;
+	color: $white;
+	&:hover {
+		background-color: darken($vk, 5);
+		border-color: darken($vk, 5);
+	}
+}
+// Wikipedia
+.btn-wikipedia {
+	background-color: $wikipedia;
+	border-color: $wikipedia;
+	color: $heading-color;
+	&:hover {
+		background-color: darken($wikipedia, 5);
+		border-color: darken($wikipedia, 5);
+	}
+}
+// Windows
+.btn-windows {
+	background-color: $windows;
+	border-color: $windows;
+	color: $white;
+	&:hover {
+		background-color: darken($windows, 5);
+		border-color: darken($windows, 5);
+	}
+}
+// 500px
+.btn-500px {
+	background-color: $s500px;
+	border-color: $s500px;
+	color: $white;
+	&:hover {
+		background-color: darken($s500px, 5);
+		border-color: darken($s500px, 5);
+	}
+}
+// 8tracks
+.btn-8tracks {
+	background-color: $s8tracks;
+	border-color: $s8tracks;
+	color: $white;
+	&:hover {
+		background-color: darken($s8tracks, 5);
+		border-color: darken($s8tracks, 5);
+	}
+}
+// Amazon
+.btn-amazon {
+	background-color: $amazon;
+	border-color: $amazon;
+	color: $white;
+	&:hover {
+		background-color: darken($amazon, 5);
+		border-color: darken($amazon, 5);
+	}
+}
+// Blogger
+.btn-blogger {
+	background-color: $blogger;
+	border-color: $blogger;
+	color: $white;
+	&:hover {
+		background-color: darken($blogger, 5);
+		border-color: darken($blogger, 5);
+	}
+}
+// Delicious
+.btn-delicious {
+	background-color: $delicious;
+	border-color: $delicious;
+	color: $white;
+	&:hover {
+		background-color: darken($delicious, 5);
+		border-color: darken($delicious, 5);
+	}
+}
+// Disqus
+.btn-disqus {
+	background-color: $disqus;
+	border-color: $disqus;
+	color: $white;
+	&:hover {
+		background-color: darken($disqus, 5);
+		border-color: darken($disqus, 5);
+	}
+}
+// Flattr
+.btn-flattr {
+	background-color: $flattr;
+	border-color: $flattr;
+	color: $white;
+	&:hover {
+		background-color: darken($flattr, 5);
+		border-color: darken($flattr, 5);
+	}
+}
+// Flickr
+.btn-flickr {
+	background-color: $flickr;
+	border-color: $flickr;
+	color: $white;
+	&:hover {
+		background-color: darken($flickr, 5);
+		border-color: darken($flickr, 5);
+	}
+}
+// Odnoklassniki
+.btn-odnoklassniki {
+	background-color: $odnoklassniki;
+	border-color: $odnoklassniki;
+	color: $white;
+	&:hover {
+		background-color: darken($odnoklassniki, 5);
+		border-color: darken($odnoklassniki, 5);
+	}
+}
+// Outlook
+.btn-outlook {
+	background-color: $outlook;
+	border-color: $outlook;
+	color: $white;
+	&:hover {
+		background-color: darken($outlook, 5);
+		border-color: darken($outlook, 5);
+	}
+}
+// Playstation
+.btn-playstation {
+	background-color: $playstation;
+	border-color: $playstation;
+	color: $white;
+	&:hover {
+		background-color: darken($playstation, 5);
+		border-color: darken($playstation, 5);
+	}
+}
+// Reddit
+.btn-reddit {
+	background-color: $reddit;
+	border-color: $reddit;
+	color: $white;
+	&:hover {
+		background-color: darken($reddit, 5);
+		border-color: darken($reddit, 5);
+	}
+}
+// Skype
+.btn-skype {
+	background-color: $skype;
+	border-color: $skype;
+	color: $white;
+	&:hover {
+		background-color: darken($skype, 5);
+		border-color: darken($skype, 5);
+	}
+}
+// Slideshare
+.btn-slideshare {
+	background-color: $slideshare;
+	border-color: $slideshare;
+	color: $white;
+	&:hover {
+		background-color: darken($slideshare, 5);
+		border-color: darken($slideshare, 5);
+	}
+}
+// SoundCloud
+.btn-soundcloud {
+	background-color: $soundcloud;
+	border-color: $soundcloud;
+	color: $white;
+	&:hover {
+		background-color: darken($soundcloud, 5);
+		border-color: darken($soundcloud, 5);
+	}
+}
+// Tumblr
+.btn-tumblr {
+	background-color: $tumblr;
+	border-color: $tumblr;
+	color: $white;
+	&:hover {
+		background-color: darken($tumblr, 5);
+		border-color: darken($tumblr, 5);
+	}
+}
+// Twitch
+.btn-twitch {
+	background-color: $twitch;
+	border-color: $twitch;
+	color: $white;
+	&:hover {
+		background-color: darken($twitch, 5);
+		border-color: darken($twitch, 5);
+	}
+}
+// Vimeo
+.btn-vimeo {
+	background-color: $vimeo;
+	border-color: $vimeo;
+	color: $white;
+	&:hover {
+		background-color: darken($vimeo, 5);
+		border-color: darken($vimeo, 5);
+	}
+}
+// Whatsapp
+.btn-whatsapp {
+	background-color: $whatsapp;
+	border-color: $whatsapp;
+	color: $white;
+	&:hover {
+		background-color: darken($whatsapp, 5);
+		border-color: darken($whatsapp, 5);
+	}
+}
+// Xbox
+.btn-xbox {
+	background-color: $xbox;
+	border-color: $xbox;
+	color: $white;
+	&:hover {
+		background-color: darken($xbox, 5);
+		border-color: darken($xbox, 5);
+	}
+}
+// Yahoo
+.btn-yahoo {
+	background-color: $yahoo;
+	border-color: $yahoo;
+	color: $white;
+	&:hover {
+		background-color: darken($yahoo, 5);
+		border-color: darken($yahoo, 5);
+	}
+}
+// Youtube
+.btn-youtube {
+	background-color: $youtube;
+	border-color: $youtube;
+	color: $white;
+	&:hover {
+		background-color: darken($youtube, 5);
+		border-color: darken($youtube, 5);
+	}
+}

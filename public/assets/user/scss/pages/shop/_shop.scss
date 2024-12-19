@@ -1,0 +1,125 @@
+/*--
+/*  4.11 - Shop CSS
+/*----------------------------------------*/
+
+
+.shop-top-bar{
+    margin-top: 50px;
+    border: 1px solid #e5e5e5;
+    padding: 0px 15px 10px;
+
+    @media #{$large-mobile}{
+        padding: 0px 10px 10px;
+    }
+}
+
+.top-bar-btn{
+    padding-top: 8px;
+
+    & .nav{
+
+        @media #{$small-mobile}{
+            @include justify-content(center);
+        }
+
+        & .nav-item{
+            & + .nav-item{
+                margin-left: 20px;
+
+                @media #{$large-mobile}{
+                    margin-left: 15px;
+                }
+            }
+
+            & .nav-link{
+                padding: 0;
+                width: 20px;
+                height: 20px;
+                @include transition(all 0.3s linear);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: scroll;
+
+                &.grid{
+                    background-image: url(../images/bkg_grid.png);                        
+                }
+                &.list{
+                    background-image: url(../images/bkg_list.png);
+                }
+                &.active{
+                    &.grid{
+                        background-image: url(../images/bkg_grid_hover.png);                        
+                    }
+                    &.list{
+                        background-image: url(../images/bkg_list_hover.png);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.top-bar-sorter{
+    padding-top: 10px;
+
+    & .sorter-wrapper{
+        @media #{$small-mobile}{
+            @include justify-content(center);
+        }
+
+        & label{
+            font-size: 14px;
+            font-weight: 400;
+            color: $heading-color;
+            margin-right: 15px;
+            margin-bottom: 0;
+        }
+        & select{
+            border: 1px solid #e5e5e5;
+            background-color: $white;
+            width: auto;
+            max-width: 100%;
+            padding: 8px 10px;
+            height: 42px;
+            font-family: $body-font;
+            font-size: 14px;
+            font-weight: 400;
+            color: $heading-color;
+            padding-right: 35px;
+        }
+    }
+}
+
+.top-bar-page-amount{
+    padding-top: 10px;
+
+    @media #{$small-mobile}{
+        text-align: center;
+    }
+
+    & p{
+        font-size: 14px;
+    }
+}
+
+.shop-banner{
+    margin-top: 50px;
+}
+
+
+.shop-sidebar{
+    padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

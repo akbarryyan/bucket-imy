@@ -1,0 +1,55 @@
+/*--
+/*  4.13 - Login CSS
+/*----------------------------------------*/
+
+
+.login-page{}
+
+
+.login-register-content{
+    & .title{
+        font-size: 24px;
+        font-weight: 400;
+        color: $heading-color;
+        font-family: $body-font;
+
+        @media #{$small-mobile}{
+            font-size: 20px;
+        }
+    }
+
+    & .forget{
+        & a{
+            font-size: 14px;
+            color: $body-color;
+            @include transition(all 0.3s linear);
+
+            &:hover{
+                color: $primary;
+            }
+        }
+    }
+
+    & .single-form{
+        & .btn-primary{
+            &:hover{
+                background-color: darken($dark, 5);
+		        border-color: darken($dark, 5);
+            }
+        }
+        & .btn-dark{
+            &:hover{
+                background-color: $primary;
+                border-color: $primary;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

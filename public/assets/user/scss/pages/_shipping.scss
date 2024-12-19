@@ -1,0 +1,45 @@
+/*--
+/*  4.2 - Shipping CSS
+/*----------------------------------------*/
+
+
+.shipping-area{}
+
+.single-shipping{
+    @include flexbox;
+    margin-top: 30px;
+
+    & .shipping-icon{
+        & img{
+            width: 70px;
+        }
+    }
+    & .shipping-content{
+        @include flex;
+        padding-left: 15px;
+        
+        & .title{
+            font-size: 14px;
+            line-height: 16px;
+            text-transform: capitalize;
+            font-weight: 700;
+            margin-bottom: 7px;    
+            color: $heading-color;        
+        }
+        & p{
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 300;            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

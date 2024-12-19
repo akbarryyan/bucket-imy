@@ -1,0 +1,53 @@
+/*--
+/*  4.8 - Newsletter CSS
+/*----------------------------------------*/
+
+.newsletter-area{}
+
+
+.newsletter-form{
+    & .form-wrapper{
+        max-width: 630px;
+        margin: 30px auto 0;
+        position: relative;
+
+        & input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]){
+            width: 100%;
+            border: 0;
+            background: none;
+            padding: 0 85px 0 30px;
+            height: 48px;
+            font-size: 15px;
+            border-bottom: 1px solid #373737;
+            color: $heading-color;    
+            font-weight: 400;        
+        }
+
+        & button{
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 500;
+            height: 100%;
+            border: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include transition(all 0.3s linear);
+            padding: 0;
+            background: inherit;            
+        }
+
+        & i{
+            position: absolute;
+            top: 56%;
+            left: 0;
+            @include transform(translateY(-50%));         
+            font-size: 25px;
+            color: $body-color;
+        }
+    }
+}
+
+
+
+

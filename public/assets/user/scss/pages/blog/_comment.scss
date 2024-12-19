@@ -1,0 +1,136 @@
+/*--
+/*  4.10 - Comment CSS
+/*----------------------------------------*/
+
+/*Comment Wrap*/
+.comment-wrap {}
+
+/*Comment List*/
+.comment-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	&:not(:last-child) {
+		margin-bottom: 40px;
+	}
+	& > li {
+		&:last-child {
+			& .comment {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+// Child Comment
+.comment-list-child {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	padding-left: 40px;
+	
+	// Responsive
+	@media #{$extra-small-mobile} {
+		padding-left: 0;
+	}
+}
+
+/*Comment*/
+.comment {
+	display: flex;
+	margin-bottom: 30px;
+	
+	// Responsive
+	@media #{$extra-small-mobile} {
+		flex-direction: column;
+	}
+}
+// Avatar
+.comment-avatar {
+	width: 80px;
+	flex: 1 0 80px;
+	margin-top: 25px;
+	align-self: flex-start;
+	& img {
+		width: 100%;
+	}
+	
+	// Responsive
+	@media #{$extra-small-mobile} {
+		margin-bottom: 15px;
+		margin-top: 0;
+	}
+}
+// Content
+.comment-content {
+	padding: 20px;
+	border: 2px solid #dddddd;
+	margin-top: 25px;
+	margin-left: 20px;
+	position: relative;
+	&::before {
+		content: '\f0d9';
+		font-family: $fontawesome;
+		position: absolute;
+		top: 10px;
+		left: -8px;
+		font-size: 20px;
+		color: #dddddd;
+	}
+	& p {}
+	
+	// Responsive
+	@media #{$extra-small-mobile} {
+		margin-left: 0;
+		&::before {
+			display: none;
+		}
+	}
+}
+// Meta
+.comment-meta {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: -45px;
+	margin-bottom: 28px;
+	font-family: $heading-font;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 1;
+	color: $heading-color;
+	margin-left: -20px;
+	& li {
+		& + li {
+			margin-left: 15px;
+			padding-left: 15px;
+			border-left: 1px solid $heading-color;
+		}
+		& a {}
+		& span {}
+	}
+	
+	// Responsive
+	@media #{$extra-small-mobile} {
+		font-size: 12px;
+	}
+}
+// Reply
+.comment-reply {
+	position: absolute;
+	top: -30px;
+	right: 0;
+	padding: 0;
+	color: $primary;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 25px;
+	
+	// Responsive
+	@media #{$extra-small-mobile} {
+		font-size: 12px;
+	}
+}

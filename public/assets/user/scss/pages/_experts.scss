@@ -1,0 +1,46 @@
+/*--
+/*  4.6 - Experts CSS
+/*----------------------------------------*/
+
+.experts-area{}
+
+.expert-wrapper{
+    padding-top: 25px;
+}
+
+.single-expert{
+    margin-top: 30px;
+
+    & .expert-image{
+        & img{
+            border-radius: 50%;
+        }
+    }
+    & .expert-content{
+        margin-top: 20px;
+
+        & .name{
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 700;
+            color: $heading-color;
+            margin-bottom: 0;
+            font-family: $body-font;
+        }
+        & p{
+            font-weight: 300;
+            color: $heading-color;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

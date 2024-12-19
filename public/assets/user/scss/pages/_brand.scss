@@ -1,0 +1,16 @@
+/*--
+/*  4.10 - Brand CSS
+/*----------------------------------------*/
+
+.brand-area{
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    @media #{$large-mobile}{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+
+

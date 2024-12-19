@@ -1,0 +1,238 @@
+/*--
+/*  4.20 - Blog CSS
+/*----------------------------------------*/
+
+.blog-page{}
+
+
+.blog-sidebar{
+    
+}
+
+.blog-single{
+    padding-top: 30px;
+
+    & img{
+        width: 100%;
+    }
+    & .title{
+        font-size: 24px;
+        font-weight: 500;
+        font-family: $body-font;
+        margin-bottom: 15px;
+        margin-top: 25px;
+    }
+    & .articles-date{
+        margin-bottom: 22px;
+
+        & p{
+            font-size: 13px;
+            line-height: 15px;
+            color: $heading-light;
+            
+            & span{
+                color: $primary;
+            }
+        }
+    }
+
+    & p{}
+    & .dec-img-wrapper{
+        padding-bottom: 30px;
+
+        & .dec-img{
+            margin-top: 30px;
+        }
+    }
+}
+
+
+.blog-dec-tags-social{
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+    padding-top: 10px;
+
+    & span{
+        font-size: 16px;
+        font-weight: 500;
+        color: $heading-color;
+    }
+    & .blog-dec-tags{
+        @include flexbox;
+        @include align-items(center);
+        margin-top: 15px;
+
+        & .tags{
+            @include flexbox;
+            @include flex-wrap(wrap);
+            padding-left: 5px;
+
+            & li{
+                margin-left: 5px;
+                margin-top: 5px;
+
+                & a{
+                    height: 30px;
+                    padding: 0 10px;
+                    line-height: 28px;
+                    border: 1px solid #e1e1e1;
+                    text-align: center;
+                    font-size: 14px;
+                    border-radius: 3px;
+                    @include transition(all 0.3s linear);
+                }
+                &:hover{
+                    & a{
+                        background-color: $primary;
+                        border-color: $primary;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    & .blog-dec-social{
+        @include flexbox;
+        @include align-items(center);
+        margin-top: 15px;
+
+        & .social{
+            @include flexbox;
+
+            & li{
+                margin-left: 15px;
+
+                & a{
+                    font-size: 16px;
+                    color: $body-color;
+                    @include transition(all 0.3s linear);
+                }
+                &:hover{
+                    & a{
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.blog-next-previous{
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding-top: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #e1e1e1;
+
+    & .left,
+    & .right{
+        font-size: 16px;
+        font-weight: 300;
+        color: $body-color;
+
+        & i{
+            font-size: 13px;
+        }
+    }
+    & .right{}
+}
+
+
+.blog-comment{
+    & .comment-wrapper{
+        & .single-form{
+            & textarea{
+                height: 180px;
+            }
+        }
+    }
+    & .comment-title{
+        text-transform: uppercase;
+        font-size: 15px;
+        font-family: $body-font;
+        color: $heading-color;
+        font-weight: 500;        
+    }
+
+    & .comment-items{
+        padding-top: 25px;
+
+        & .comment-replay{
+            padding-left: 150px;
+
+            @media #{$large-mobile}{
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+
+.single-commnet{
+    @include flexbox;
+    margin-top: 30px;
+
+    @media #{$small-mobile}{
+        display: block;
+    }
+
+    & .comment-avater{
+        & img{
+            border-radius: 50%;
+            width: 120px;
+        }
+    }
+    & .comment-content{
+        padding-left: 30px;
+        @include flex;
+
+        @media #{$small-mobile}{
+            padding-top: 25px;
+            padding-left: 0;
+        }
+
+        & .avater-name{
+            font-size: 16px;
+            font-weight: 500;
+            font-family: $body-font;
+            color: $heading-color;
+            margin-bottom: 0;
+        }
+        & .date{
+            font-size: 14px;
+            font-weight: 400;
+            color: $body-color;
+        }
+        & p{
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        & .replay{
+            padding-left: 48px;
+            position: relative;
+            color: $heading-color;
+            font-size: 14px;
+            font-weight: 500;
+
+            &::before{
+                background-color: $heading-color;
+                content: "";
+                height: 1px;
+                left: 0;
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                transition: all 0.3s ease 0s;
+                width: 37px;
+            }
+        }
+    }
+}
+
+
+
+

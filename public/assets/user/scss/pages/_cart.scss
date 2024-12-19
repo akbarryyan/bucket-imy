@@ -1,0 +1,261 @@
+/*--
+/*  4.14 - Cart CSS
+/*----------------------------------------*/
+
+
+.cart-page{}
+
+.cart-table{
+    & .table{
+        & thead{
+            background-color: #e1e1e1;
+
+            & tr{
+                & th{
+                    background-color: #fff;
+                    border: 1px solid #e5e5e5 !important;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: $heading-color;
+                    padding: 15px;
+                    text-align: center;
+                    background: none;
+                    min-width: 16.66%;
+
+                    @media #{$tablet-device}{
+                        min-width: 140px;
+                    }
+                    @media #{$large-mobile}{
+                        min-width: 140px;
+                    }
+
+                    &.image{}
+                    &.product{}
+                    &.price{}
+                    &.quantity{}
+                    &.total{}
+                    &.remove{}
+                }
+            }
+        }
+        & tbody{
+            & tr{
+                & td{
+                    border: 1px solid #e1e1e1;
+                    text-align: center;
+                    vertical-align: middle;
+                    padding: 15px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $heading-color;
+
+                    &.image{
+                        & img{
+                            width: 128px;
+                        }
+                    }
+                    &.product{
+                        text-align: left;
+
+                        & a{
+                            color: $heading-color;
+                            @include transition(all 0.3s linear);
+
+                            &:hover{
+                                color: $primary;
+                            }
+                        }
+                        & span{
+                            font-size: 13px;
+                            font-weight: 300;
+                            color: $heading-color;
+                            display: block;
+                        }
+                    }
+                    &.price{}
+                    &.quantity{
+                        & .quantity{
+                            border-bottom: 2px solid #ccc;
+                    
+                            & button{
+                                height: 40px;
+                                width: 30px;
+                                background: none;
+                                border: 0;
+                                font-size: 14px;
+                                color: $heading-color;
+                            }
+                            & input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]){
+                                width: 60px;
+                                padding: 0 10px;
+                                background: none;
+                                text-align: center;
+                                color: $heading-color;
+                                border: 0;
+                            }
+                        }
+                    }
+                    &.total{}
+                    &.remove{
+                        & button{
+                            font-size: 16px;
+                            color: $heading-color;
+                            padding: 0;
+                            border: 0;
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.cart-btn{    
+    padding-top: 5px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+
+    @media #{$small-mobile}{
+        display: block;
+    }
+
+    & .cart-btn-left,
+    & .cart-btn-right{
+        margin-top: 15px;
+    }
+
+    & .btn{
+        border: 1px solid #e6e6e6;        
+        border-radius: 3px;
+        color: $heading-color;
+        font-weight: 500;
+
+        &:hover{
+            border-color: $primary;
+            background-color: $primary;
+            color: $white;
+        }
+        &.btn-primary{
+            border-color: $primary;
+            color: $white;
+
+            &:hover {
+                background-color: darken($dark, 5);
+                border-color: darken($dark, 5);
+            }
+        }
+    }
+
+    & .main-btn{        
+        padding: 0 30px;
+        margin-right: 5px;
+
+        @media #{$large-mobile}{
+            padding: 0 20px;
+            height: 40px;
+            line-height: 38px;
+            font-size: 14px;
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    
+}
+
+
+.cart-shipping,
+.cart-coupon,
+.cart-totals{
+    margin-top: 40px;
+}
+
+.cart-title{
+    & .title{
+        font-weight: 500;
+        font-family: $body-font;
+        font-size: 18px;
+        color: $heading-color;
+        position: relative;
+        text-transform: uppercase;
+        position: relative;
+        line-height: 18px;
+    }
+}
+
+.cart-form{
+    & .cart-form-btn{
+        padding-top: 15px;
+
+        & .btn{
+            height: 40px;
+            line-height: 38px;
+            font-weight: 500;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: darken($dark, 5);
+                border-color: darken($dark, 5);
+            }
+        }
+    }
+}
+
+.cart-totals{
+    & .cart-total-table{
+        background-color: #f7f7f7;
+        padding: 15px 20px;
+        
+        & .table{
+            margin-bottom: 0;
+
+            & tbody{
+                & tr{
+                    & td{
+                        padding: 5px 0;
+                        border-top: 0;
+                    }
+                }
+            }
+        }
+
+        & .value{
+            font-size: 14px;
+            font: 400px;
+            color: $black;
+            text-transform: capitalize;
+        }
+        & .price{
+            font-size: 14px;
+            font: 400px;
+            color: $black;
+        }        
+    }
+}
+
+.cart-total-btn{
+    margin-top: 20px;
+
+    & .btn{
+        font-weight: 500;
+        border-radius: 3px;
+
+        &:hover {
+            background-color: darken($dark, 5);
+            border-color: darken($dark, 5);
+        }
+    }
+}
+
+
+

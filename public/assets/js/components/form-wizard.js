@@ -1,0 +1,1 @@
+new Wizard("#horizontalwizard"),new Wizard("#verticalwizard");

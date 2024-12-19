@@ -1,0 +1,24 @@
+/*--
+/*  2.3 - Blockquote CSS
+/*----------------------------------------*/
+
+blockquote {
+    background-color: #f6f6f6;
+    padding: 30px 45px;
+    margin: 31px 0 31px 40px;
+    border: 1px solid #ebebeb;
+    border-left: 4px solid $primary;
+
+    @media #{$small-mobile}{
+        margin-left: 0;
+        padding: 20px 25px;
+    }
+
+    & p {
+        font-size: 16px;
+        font-style: italic;
+        color: $body-color;
+        line-height: 24px;
+        font-weight: 400;
+    }
+}

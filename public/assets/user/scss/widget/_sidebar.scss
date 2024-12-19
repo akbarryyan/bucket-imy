@@ -1,0 +1,328 @@
+/*--
+/*  5.1 - Sidebar Widget CSS
+/*----------------------------------------*/
+
+
+
+// Widget Title
+.widget-title {
+    font-size: 15px;
+    font-family: $body-font;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 20px;
+    border-bottom: 1px solid #e1e1e1;    
+}
+
+
+// Categories
+.sidebar-categories {
+    margin-top: 28px;
+
+    & .categories-list{
+        & li{
+            & + li{
+                margin-top: 10px;
+            }
+
+            & a{
+                font-size: 14px;
+                color: $body-color;
+                @include transition(all 0.3s linear);
+                display: block;
+
+                & span{
+                    float: right;
+                    @include flexbox;
+                    @include justify-content(center)
+                }
+
+                &:hover{
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+
+// Color
+
+.sidebar-color{
+    margin-top: 28px;
+
+    & .color-list{
+        margin-left: -5px;
+        margin-right: -5px;
+
+        & li{
+            font-size: 14px;
+            color: $body-color;   
+            @include transition(all 0.3s linear);
+            margin-top: 5px;
+            cursor: pointer;
+            display: inline-block;
+            padding: 0 5px;
+            line-height: 14px;
+
+            
+            &.active{
+                color: $primary;
+            }
+
+            & span{
+                width: 14px;
+                height: 14px;
+                display: inline-block;
+                border: 1px solid #e5e5e5;
+                margin-right: 3px;
+            }
+        }
+    }
+}
+
+
+// Size
+
+.sidebar-size{
+    margin-top: 28px;
+
+    & .size-list{
+        @include flexbox;
+        @include flex-wrap(wrap);
+        margin-left: -3px;
+        margin-right: -3px;
+
+        & li{
+            padding: 0 3px;
+            margin-top: 5px;
+
+            & a{
+                width: 45px;
+                height: 27px;
+                line-height: 25px;
+                border: 1px solid #e1e1e1;
+                text-align: center;
+                font-size: 14px;
+                border-radius: 3px;
+                @include transition(all 0.3s linear);
+            }
+            &:hover,
+            &.active{
+                & a{
+                    background-color: $primary;
+                    border-color: $primary;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+// Banner
+
+.sidebar-banner{
+    margin-top: 30px;
+
+    & a{
+        & img{
+            width: 100%;
+        }
+    }
+}
+
+
+// Product
+
+.sidebar-product{
+    margin-top: 28px;
+
+    & .product-list{
+        & li{
+            & + li{
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.single-mini-product{
+    @include flexbox;
+
+    & .product-image{
+        width: 80px;
+
+        & img{
+            width: 100%;
+        }
+    }
+    & .product-content{
+        @include flex;
+        padding-left: 15px;
+
+        & .title{
+            margin-bottom: 5px;
+
+            & a{
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: 400;
+                text-transform: capitalize;
+                color: $heading-color;
+                @include transition(all 0.3s linear);
+                font-family: $body-font;
+                
+                &:hover{
+                    color: $primary;
+                }
+            }
+        }
+        & .rating{
+            @include flexbox;
+
+            & li{
+                margin: 0 1px;
+                color: $body-color;
+                font-size: 12px;
+
+                &.rating-on{
+                    color: #FF9800;
+                }
+            }
+        }
+        & .price-box{
+            & .current-price{
+                font-weight: 500;
+                font-size: 12px;
+                color: $body-color;
+            }
+            & .old-price{
+                text-decoration: line-through;
+                font-weight: 400;
+                font-size: 12px;
+                margin-right: 5px;
+                color: $body-color;
+            }
+        }
+    }
+}
+
+
+// Tags
+
+.sidebar-tags{
+    margin-top: 28px;
+
+    & .tags-list{
+        @include flexbox;
+        @include flex-wrap(wrap);
+        margin-left: -3px;
+        margin-right: -3px;
+
+        & li{
+            padding: 0 3px;
+            margin-top: 5px;
+
+            & a{
+                height: 35px;
+                padding: 0 15px;
+                line-height: 33px;
+                border: 1px solid #e1e1e1;
+                text-align: center;
+                font-size: 14px;
+                border-radius: 3px;
+                @include transition(all 0.3s linear);
+            }
+            &:hover,
+            &.active{
+                & a{
+                    background-color: $primary;
+                    border-color: $primary;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+// Search 
+
+.sidebar-search{
+    margin-top: 28px;
+
+    & .search-form{
+        position: relative;
+        margin-top: 10px;
+
+        & input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]){
+            padding-right: 35px;
+        }
+        & button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            font-size: 18px;
+            color: $body-color;
+            border: 0;
+            background: none;
+        }
+    }
+}
+
+
+// Post 
+
+.sidebar-post{
+    margin-top: 28px;
+
+    & .post-items{        
+
+        & .single-post{
+            @include flexbox
+            margin-top: 20px;
+
+            & .post-thumb{
+                & img{
+                    width: 80px;
+                }
+            }
+            & .post-content{
+                @include flex;
+                padding-left: 15px;
+
+                & .date{
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: $body-color;
+                    display: block;
+                    margin-bottom: 3px;
+                }
+                & .post-title{
+                    line-height: 20px;
+                    margin-bottom: 0;
+
+                    & a{
+                        font-size: 16px;
+                        color: $heading-color;
+                        font-weight: 400;
+                        @include transition(all 0.3s linear);
+                        font-family: $body-font;                        
+
+                        &:hover{
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

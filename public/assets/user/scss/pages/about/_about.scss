@@ -1,0 +1,99 @@
+/*--
+/*  4.4 - About CSS
+/*----------------------------------------*/
+
+.about-area{}
+
+
+
+.about-image{
+	margin-top: 45px;
+
+	& img{
+		width: 100%;
+	}
+}
+
+
+.about-content{
+	margin-top: 40px;
+	padding-left: 30px;
+
+	@media #{$tablet-device}{
+		padding-left: 0;
+	}
+	@media #{$large-mobile}{
+		padding-left: 0;
+	}
+
+	& .title{
+		font-size: 31px;
+		margin-bottom: 20px;
+		line-height: 39px;
+		font-family: $body-font;
+		font-weight: 400;	
+		
+		@media #{$large-mobile}{
+			font-size: 24px;
+			line-height: 32px;
+		}
+	}
+
+	& p{
+		margin-top: 17px;
+		font-weight: 300;
+	}
+	& ul{
+		& li{
+			padding-left: 4px;
+			list-style: disc;
+			margin-left: 15px;
+			font-weight: 400;
+			font-size: 16px;
+			margin-top: 4px;			
+		}
+	}
+
+	& .about-btn{
+		margin-top: 40px;
+	}
+}
+
+
+
+
+.about-page-area{}
+
+.about-thumb{
+	& img{
+		width: 100%;
+	}
+}
+
+.about-page-content{
+	padding-top: 26px;
+
+	& .title{
+		display: inline-block;
+		font-size: 24px;
+		line-height: 36px;
+		text-transform: capitalize;
+		font-weight: 400;
+		margin-bottom: 21px;	
+		color: $heading-color;
+
+		@media #{$large-mobile}{
+			font-size: 18px;
+			line-height: 28px;
+		}
+	}
+	& p{
+		max-width: 890px;
+		margin: 0 auto;
+		font-size: 14px;
+
+	}
+	& .about-signature{
+		margin-top: 25px;
+	}	
+}

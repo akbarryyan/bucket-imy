@@ -1,0 +1,156 @@
+/*--
+/*  07. Footer CSS
+/*----------------------------------------*/
+
+.footer-area{
+    background-color: $heading-color;
+}
+
+.footer-widget-area{}
+
+.footer-widget{
+    margin-top: 50px;
+
+    & .footer-logo{
+        margin-bottom: 30px;
+
+        & img{}
+    }
+
+    & .footer-widget-text{
+        & p{
+            margin-bottom: 0;
+            color: $white;
+        }
+    }
+
+    & .widget-social{
+        margin-top: 23px;
+
+        & ul{
+            @include flexbox;
+            @include flex-wrap;
+
+            & li{
+                margin-right: 10px;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+
+                & a{
+                    width: 42px;
+                    height: 42px;
+                    line-height: 44px;
+                    display: block;
+                    text-align: center;
+                    font-size: 14px;
+                    background: #f2f2f2;
+                    border-radius: 50%;     
+                    @include transition(all 0.3s linear);
+                    
+                    &:hover{
+                        background-color: $primary;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-widget-title{
+        font-size: 15px;
+        line-height: 16px;
+        margin-bottom: 7px;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+        color: $white;
+        font-family: $body-font;
+    }
+    & .footer-widget-menu{
+        & ul{
+            & li{
+                & a{
+                    display: block;
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 30px;     
+                    color: $white;
+                    @include transition(all 0.3s linear);
+
+                    &:hover{
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copyright-section{
+    background-color: $heading-color;
+    border-top: 1px solid rgba(51, 51, 51, 0.4);
+}
+
+
+.copyright-wrapper{
+    padding-bottom: 20px;
+
+    & .copyright-content{
+        padding-top: 20px;
+
+        & p{
+            text-transform: capitalize;
+            line-height: 25px;
+            font-size: 14px;
+            color: $white;
+            font-weight: 300;
+
+            & a{
+                color: $primary;
+            }
+        }
+    }
+    & .copyright-payment{
+        padding-top: 20px;
+    }
+}
+
+
+/*===== Back To Top =====*/
+
+.back-to-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    z-index: 99;
+    text-align: center;
+    display: none;
+    @include box-shadow (0px 0px 30px 0px rgba(156,156,156,0.25));
+    @include transition(0.4s);
+    color: $white;
+    background-color: $primary;
+    
+    &:hover{
+        color: $white;
+        background-color: #abb8c0;
+
+        & i{
+            @include animation(fadeInUp 1s both infinite);
+        }
+    }
+
+    &:focus{
+        color: $white;
+    }
+}
+
+
+

@@ -1,0 +1,226 @@
+/*--
+/*  4.1 - Slider CSS
+/*----------------------------------------*/
+
+
+.slider-area{
+    & .container{
+        @media #{$extraBig-device}{
+            max-width: 1427px;
+        }
+    }
+}
+
+.single-slider{
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 738px;    
+    @include flexbox;
+    @include align-items(center);
+
+    @media #{$desktop-device}{
+        height: 610px;
+    }
+    @media #{$tablet-device}{
+        height: 610px;
+    }
+    @media #{$large-mobile}{
+        height: 538px;
+        background-position: left  center;
+    }
+}
+
+.slider-content{
+    opacity: 0;
+
+    & .sub-title{
+        font-size: 16px;
+        color: $heading-color;
+        font-family: $body-font;
+        line-height: 20px;
+        font-weight: 400;
+        border-left: 2px solid $black;
+        padding-left: 8px;
+        margin-bottom: 33px;
+    }
+    & .main-title{
+        font-weight: 400;
+        line-height: 63px;
+        color: $heading-light;
+        font-family: $body-font;
+        font-size: 63px;       
+        text-transform: uppercase;
+        margin-bottom: 24px; 
+
+        @media #{$large-mobile}{
+            font-size: 30px;
+            line-height: 40px;
+        }
+    }
+    & p{
+        color: $heading-light;
+        font-family: $body-font;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 24px;  
+        
+        @media #{$large-mobile}{
+            font-size: 16px;
+        }
+    }
+    & .slider-btn{
+        padding-top: 30px;
+
+        @media #{$large-mobile}{
+            padding-top: 20px;
+        }
+        & li{
+            margin-top: 10px;
+            display: inline-block;
+            margin-right: 15px;
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            & .btn{
+                height: 60px;
+                line-height: 58px;
+                padding: 0 45px;
+                font-size: 15px;
+
+                @media #{$large-mobile}{
+                    height: 45px;
+                    line-height: 43px;
+                    padding: 0 35px;
+                }
+
+                &:hover{
+                    background-color: $heading-color;
+                    border-color: $heading-color;
+                }
+            }
+        }
+    }
+}
+
+
+.animation-style-01{
+    &.swiper-slide-active{
+        & .slider-content{
+            opacity: 1;
+
+            & .sub-title{
+                animation-name: fadeInLeft;
+                animation-delay: 0.5s;
+                animation-duration: 1.3s;
+                animation-fill-mode: both;
+                
+            }
+            & .main-title{
+                animation-name: fadeInLeft;
+                animation-delay: 1s;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+            }
+            & p{
+                animation-name: fadeInLeft;
+                animation-delay: 1.7s;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+            }
+            & .slider-btn{        
+                & li{        
+                    &:nth-child(2n+1){        
+                        & .btn{
+                            animation-name: fadeInLeft;
+                            animation-delay: 2s;
+                            animation-duration: 1s;
+                            animation-fill-mode: both;
+                        }
+                    }    
+                    &:nth-child(2n+2){        
+                        & .btn{
+                            animation-name: fadeInLeft;
+                            animation-delay: 2.5s;
+                            animation-duration: 1s;
+                            animation-fill-mode: both;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.slider-active{
+    & .swiper-next,
+    & .swiper-prev{
+        position: absolute;
+        top: 50%;
+        left: 50px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 50px;
+        @include transform(translateY(-50%));
+        z-index: 5;
+        color: $heading-color;
+        @include transition(all 0.3s linear);
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+
+        @media #{$tablet-device}{
+            display: none;
+        }
+        @media #{$large-mobile}{
+            display: none;
+        }
+
+        &:hover{
+            color: $primary;
+        }
+    }
+    
+    & .swiper-next{
+        left: auto;
+        right: 50px;
+    }
+
+    &:hover{
+        & .swiper-next,
+        & .swiper-prev{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    & .swiper-pagination{
+        @media #{$extraBig-device}{
+            display: none;
+        }
+        @media #{$laptop-device }{
+            display: none;
+        }
+        @media #{$desktop-device}{
+            display: none;
+        }
+
+        & .swiper-pagination-bullet{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $heading-color;
+            opacity: 0.8;
+
+            &.swiper-pagination-bullet-active{
+                background-color: $primary;
+            }
+        }
+    }
+}
+
