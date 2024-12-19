@@ -64,6 +64,8 @@
 
         @include('layouts.user.header')
 
+        <div class="overlay"></div>
+        <!--Overlay-->
         @yield('content')
         <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
                     <script>
@@ -86,7 +88,5 @@
                               }).showToast();
                          @endif
                     </script>
-        <div class="overlay"></div>
-        <!--Overlay-->
 
         @include('layouts.user.footer')
