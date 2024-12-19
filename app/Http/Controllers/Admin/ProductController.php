@@ -37,7 +37,7 @@ class ProductController extends Controller
 
     Product::create($data);
 
-    return redirect()->route('admin.products.index')->with('success', 'Product created successfully.');
+    return redirect()->route('admin.products.index')->with('success', 'Product added successfully.');
 }
 
     public function update(Request $request, $id)

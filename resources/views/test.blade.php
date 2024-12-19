@@ -51,11 +51,14 @@
       <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="grid" role="tabpanel">
               <div class="row">
+                @foreach($products as $product)
                   <div class="col-lg-3 col-sm-6">
                       <div class="single-product">
                           <div class="product-image">
                               <a href="shop-single.html">
-                                  <img src="{{ asset('assets/user/images/product/product-1.jpg') }}" alt="">
+                                @if ($product->image)
+                                  <img src="{{ asset('storage/' . $product->image) }}" alt="">
+                                @endif
                               </a>
 
                               <span class="sticker-new soldout-title">Soldout</span>
@@ -73,103 +76,15 @@
                               <div class="rating">
                                   <div class="rating-on" style="width: 80%;"></div>
                               </div>
-                              <h4 class="product-name"><a href="shop-single.html">Spring Snowflake</a></h4>
+                              <h4 class="product-name"><a href="shop-single.html">{{ $product->name }}</a></h4>
                               <div class="price-box">
-                                  <span class="current-price">$19.00</span>
+                                  <span class="current-price">Rp. {{ number_format($product->price, 0) }}</span>
                                   <span class="old-price">$29.00</span>
                               </div>
                           </div>
                       </div>
                   </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <div class="single-product">
-                          <div class="product-image">
-                              <a href="shop-single.html">
-                                  <img src="{{ asset('assets/user/images/product/product-2.jpg') }}" alt="">
-                              </a>
-
-                              <div class="action-links">
-                                  <ul>
-                                      <li><a href="cart.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
-                                      <li><a href="compare.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
-                                      <li><a href="wishlist.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                      <li><a href="javascript:void(0);" data-bs-tooltip="tooltip" data-bs-placement="left" title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-eye"></i></a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div class="product-content text-center">
-                              <div class="rating">
-                                  <div class="rating-on" style="width: 80%;"></div>
-                              </div>
-                              <h4 class="product-name"><a href="shop-single.html">Rock Soapwort</a></h4>
-                              <div class="price-box">
-                                  <span class="current-price">$50.00</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <div class="single-product">
-                          <div class="product-image">
-                              <a href="shop-single.html">
-                                  <img src="{{ asset('assets/user/images/product/product-3.jpg') }}" alt="">
-                              </a>
-
-                              <span class="sticker-new label-sale">-35%</span>
-
-                              <div class="action-links">
-                                  <ul>
-                                      <li><a href="cart.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
-                                      <li><a href="compare.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
-                                      <li><a href="wishlist.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                      <li><a href="javascript:void(0);" data-bs-tooltip="tooltip" data-bs-placement="left" title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-eye"></i></a></li>
-                                  </ul>
-                              </div>
-
-                              <div class="product-countdown">
-                                  <div data-countdown="2022/12/31"></div>
-                              </div>
-
-                          </div>
-                          <div class="product-content text-center">
-                              <div class="rating">
-                                  <div class="rating-on" style="width: 80%;"></div>
-                              </div>
-                              <h4 class="product-name"><a href="shop-single.html">Scarlet Sage</a></h4>
-                              <div class="price-box">
-                                  <span class="current-price">$39.00</span>
-                                  <span class="old-price">$60.00</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <div class="single-product">
-                          <div class="product-image">
-                              <a href="shop-single.html">
-                                  <img src="{{ asset('assets/user/images/product/product-4.jpg') }}" alt="">
-                              </a>
-
-                              <div class="action-links">
-                                  <ul>
-                                      <li><a href="cart.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to cart"><i class="icon-shopping-bag"></i></a></li>
-                                      <li><a href="compare.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
-                                      <li><a href="wishlist.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                                      <li><a href="javascript:void(0);" data-bs-tooltip="tooltip" data-bs-placement="left" title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-eye"></i></a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div class="product-content text-center">
-                              <div class="rating">
-                                  <div class="rating-on" style="width: 80%;"></div>
-                              </div>
-                              <h4 class="product-name"><a href="shop-single.html">Foxglove Flower</a></h4>
-                              <div class="price-box">
-                                  <span class="current-price">$79.00</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                  @endforeach
               </div>
           </div>
           <div class="tab-pane fade" id="list" role="tabpanel">
