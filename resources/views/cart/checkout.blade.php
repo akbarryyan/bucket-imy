@@ -49,7 +49,7 @@
                                 <div class="single-form">
                                     <label for="payment_proof" class="form-label">Payment Proof *</label>
                                     <div class="input-group">
-                                        <input type="file" id="payment_proof" name="payment_proof" class="form-control" aria-describedby="paymentProofHelpBlock" required>
+                                        <input type="file" id="payment_proof" name="payment_proof" class="form-control" aria-describedby="paymentProofHelpBlock">
                                     </div>
                                     <small id="paymentProofHelpBlock" class="form-text text-muted">
                                         Please upload the proof of your payment. Accepted formats: jpeg, png, jpg, gif, svg. Max size: 2MB.

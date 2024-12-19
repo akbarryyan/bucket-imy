@@ -3,14 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProfitController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProductUserController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TransactionController;
-use App\Http\Controllers\Admin\PaymentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +27,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('products', ProductController::class);
     Route::resource('transactions', TransactionController::class);
     Route::get('payments', [PaymentController::class, 'showPayments'])->name('payments'); Route::post('payments', [PaymentController::class, 'storePayment'])->name('payments.store'); Route::put('payments/{id}', [PaymentController::class, 'updatePayment'])->name('payments.update'); Route::delete('payments/{id}', [PaymentController::class, 'destroyPayment'])->name('payments.destroy');
+    Route::get('profits', [ProfitController::class, 'showProfits'])->name('profits');
+    Route::post('profits/calculate-daily-profit', [ProfitController::class, 'calculateDailyProfit'])->name('calculateDailyProfit');
+    Route::post('profits/calculate-monthly-profit', [ProfitController::class, 'calculateMonthlyProfit'])->name('calculateMonthlyProfit');
+    Route::get('profits/daily-pdf', [ProfitController::class, 'generateDailyProfitPDF'])->name('profits.daily-pdf');
+    Route::get('profits/monthly-pdf', [ProfitController::class, 'generateMonthlyProfitPDF'])->name('profits.monthly-pdf');
+
 });
 
 
