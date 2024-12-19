@@ -36,7 +36,7 @@
               <li class="menu-title">Apps</li>
 
               <li class="nav-item">
-                   <a class="nav-link" href="apps-chat.html">
+                   <a class="nav-link" href="{{ route('admin.products.index') }}">
                         <span class="nav-icon">
                              <iconify-icon icon="solar:floor-lamp-minimalistic-broken"></iconify-icon>
                         </span>

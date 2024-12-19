@@ -51,8 +51,6 @@ Route::post('admin/logout', [AuthController::class, 'logout'])->name('admin.logo
 //     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
 // });
 
-Route::get('products', [ProductUserController::class, 'index'])->name('products.index');
-
 Route::middleware(['auth'])->group(function () {
     Route::prefix('cart')->name('cart.')->group(function () {
         Route::post('add/{productId}', [CartController::class, 'addToCart'])->name('add');
@@ -64,6 +62,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', function() {
         return view('dashboard');
     })->name('dashboard.user');
+    Route::get('products', [ProductUserController::class, 'index'])->name('products.index');
 });
 
 // Route::middleware(['auth'])->group(function () {
