@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfitController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\CustomOrderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\OrderCustomController;
 use App\Http\Controllers\ProductUserController;
@@ -40,6 +41,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('materials', [MaterialController::class, 'store'])->name('materials.store');
     Route::put('materials/{material}', [MaterialController::class, 'update'])->name('materials.update');
     Route::delete('materials/{material}', [MaterialController::class, 'destroy'])->name('materials.destroy');
+    Route::get('custom-orders', [CustomOrderController::class, 'index'])->name('customOrders.index');
+    Route::get('custom-orders/{order}', [CustomOrderController::class, 'show'])->name('customOrders.show');
+    Route::delete('custom-orders/{order}', [CustomOrderController::class, 'destroy'])->name('customOrders.destroy');
+    Route::post('custom-orders/{order}/update-status', [CustomOrderController::class, 'updateStatus'])->name('customOrders.updateStatus');
 });
 
 

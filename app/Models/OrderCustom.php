@@ -11,6 +11,9 @@ class OrderCustom extends Model
 
     protected $fillable = ['user_id', 'shipping_method', 'delivery_time', 'shipping_address', 'payment_method', 'payment_proof', 'total_price', 'status'];
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
     public function details()
     {
         return $this->hasMany(OrderCustomDetail::class);
