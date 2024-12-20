@@ -6,18 +6,19 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfitController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\Admin\AuthController;
-use App\Http\Controllers\Admin\CustomOrderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\OrderCustomController;
 use App\Http\Controllers\ProductUserController;
+use App\Http\Controllers\User\AccountController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\MaterialController;
 use App\Http\Controllers\CustomCheckoutController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\CustomOrderController;
 use App\Http\Controllers\Admin\TransactionController;
 
-Route::get('/', function () {
+Route::get('/register', function () {
     return view('welcome');
 });
 
@@ -69,7 +70,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout.post');
     Route::get('cart/custom-checkout/{order_id}', [CustomCheckoutController::class, 'show'])->name('cart.customCheckout');
     Route::post('cart/custom-checkout', [CustomCheckoutController::class, 'store'])->name('cart.customCheckout.store');
-
+    Route::get('my-account', [AccountController::class, 'index'])->name('account.index');
+    Route::put('my-account', [AccountController::class, 'update'])->name('account.update');
+    Route::get('order/{id}', [OrderController::class, 'show'])->name('order.show');
+    Route::get('/orders', [OrderController::class, 'getOrders'])->name('orders.get');
+    Route::get('custom-order/{id}', [CustomOrderController::class, 'show'])->name('customOrder.show');
 });
 
 // Rute untuk login dan register pengguna

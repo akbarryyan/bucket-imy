@@ -6,7 +6,7 @@
           <div class="col-lg-2">
             <div class="header-logo">
               <a href="index.html"
-                ><img src="{{ asset('assets/user/images/logo/logo.png') }}" alt=""
+                ><img src="{{ asset('assets/images/logo.png') }}" alt=""
               /></a>
             </div>
           </div>
@@ -15,141 +15,9 @@
               <nav class="site-nav">
                 <ul>
                   <li><a href="{{ route('dashboard.user') }}">Home</a></li>
-                  <li>
-                    <a href="#">Shop <span class="new">New</span></a>
-
-                    <ul class="mega-sub-menu">
-                      <li class="mega-dropdown">
-                        <a class="mega-title" href="#">Shop</a>
-
-                        <ul class="mega-item">
-                          <li>
-                            <a href="shop-grid-3.html">Shop Grid 3</a>
-                          </li>
-                          <li>
-                            <a href="shop-grid-4.html">Shop Grid 4</a>
-                          </li>
-                          <li><a href="shop-list.html">Shop List</a></li>
-                          <li>
-                            <a href="shop-grid-left-sidebar.html"
-                              >Shop Grid Left Sidebar</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shop-grid-right-sidebar.html"
-                              >Shop Grid Right Sidebar</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shop-list-left-sidebar.html"
-                              >Shop List Left Sidebar</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shop-list-right-sidebar.html"
-                              >Shop List Right Sidebar</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="mega-dropdown">
-                        <a class="mega-title" href="#">Shop Single</a>
-
-                        <ul class="mega-item">
-                          <li>
-                            <a href="shop-single.html">Shop Single</a>
-                          </li>
-                          <li>
-                            <a href="shop-single-affiliate.html"
-                              >Shop Single Affiliate</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shop-single-variable.html"
-                              >Shop Single Variable</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shop-single-group.html"
-                              >Shop Single Group</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="mega-dropdown">
-                        <a class="mega-title" href="#">Page</a>
-
-                        <ul class="mega-item">
-                          <li><a href="cart.html">Cart</a></li>
-                          <li><a href="wishlist.html">Wishlist</a></li>
-                          <li><a href="compare.html">Compare</a></li>
-                          <li><a href="checkout.html">Checkout</a></li>
-                          <li><a href="empty-cart.html">Empty Cart</a></li>
-                          <li><a href="my-account.html">My Account</a></li>
-                        </ul>
-                      </li>
-                      <li class="mega-dropdown">
-                        <a class="menu-banner" href="#">
-                          <img
-                            src="{{ asset('assets/user/images/menu-banner.jpg') }}"
-                            alt=""
-                          />
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Blog</a>
-
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="#">Blog</a>
-                        <ul class="sub-menu">
-                          <li><a href="blog.html">Blog</a></li>
-                          <li>
-                            <a href="blog-left-sidebar.html"
-                              >Blog Left Sidebar</a
-                            >
-                          </li>
-                          <li>
-                            <a href="blog-right-sidebar.html"
-                              >Blog Right Sidebar</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="#">Blog Single</a>
-                        <ul class="sub-menu">
-                          <li>
-                            <a href="blog-single-left-sidebar.html"
-                              >Blog Single Left Sidebar</a
-                            >
-                          </li>
-                          <li>
-                            <a href="blog-single-right-sidebar.html"
-                              >Blog Single Right Sidebar</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Pages <span class="sale">Sale</span></a>
-                    <ul class="sub-menu">
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="cart.html">Cart</a></li>
-                      <li><a href="wishlist.html">Wishlist</a></li>
-                      <li><a href="compare.html">Compare</a></li>
-                      <li><a href="checkout.html">Checkout</a></li>
-                      <li><a href="empty-cart.html">Empty Cart</a></li>
-                      <li><a href="my-account.html">My Account</a></li>
-                      <li><a href="login.html">Login</a></li>
-                      <li><a href="register.html">Register</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="{{ route('products.index') }}">All Products</a></li>
+                  <li><a href="{{ route('products.index') }}">Order</a></li>
+                  <li><a href="{{ route('custom-order.index') }}">Custom Order</a></li>
                 </ul>
               </nav>
             </div>
@@ -169,11 +37,7 @@
                   ></a>
 
                   <ul class="dropdown-menu">
-                    <li><a href="#">Delivery</a></li>
-                    <li><a href="#">Legal Notice</a></li>
-                    <li><a href="#">Secure payment</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">About us</a></li>
+                    <li><a href="{{ route('account.index') }}">My Account</a></li>
                     <li>
                         <form action="{{ route('user.logout') }}" method="POST">
                             @csrf

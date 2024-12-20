@@ -8,7 +8,7 @@
             <div
               class="single-slider swiper-slide animation-style-01"
               style="
-                background-image: url({{ asset('assets/user/images/slider/slider-1.jpg') }});
+                background-image: url({{ asset('assets/images/slider-1.webp') }});
               "
             >
               <div class="container">
@@ -38,7 +38,7 @@
             <div
               class="single-slider swiper-slide animation-style-01"
               style="
-                background-image: url({{ asset('assets/user/images/slider/slider-2.jpg') }});
+                background-image: url({{ asset('assets/images/slider-2.webp') }});
               "
             >
               <div class="container">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="shipping-content">
                   <h5 class="title">Free Delivery</h5>
-                  <p>Free shipping around the world for all orders over $120</p>
+                  <p>Free shipping around the world</p>
                 </div>
               </div>
             </div>
@@ -164,7 +164,7 @@
                     <div class="product-image">
                       <a href="shop-single.html">
                         <img
-                          src="{{ asset('assets/user/images/product/product-1.jpg') }}"
+                          src="{{ asset('https://outerbloom.com/cdn/shop/files/Blossom-Kiss-Bouquet_350x.jpg?v=1730714489') }}"
                           alt=""
                         />
                       </a>
@@ -218,11 +218,11 @@
                         <div class="rating-on" style="width: 80%"></div>
                       </div>
                       <h4 class="product-name">
-                        <a href="shop-single.html">Spring Snowflake</a>
+                        <a href="shop-single.html">Bucket Medium Orange</a>
                       </h4>
                       <div class="price-box">
-                        <span class="current-price">$19.00</span>
-                        <span class="old-price">$29.00</span>
+                        <span class="current-price">Rp. 130.000</span>
+                        <span class="old-price">Rp. 180.000</span>
                       </div>
                     </div>
                   </div>
@@ -232,7 +232,7 @@
                     <div class="product-image">
                       <a href="shop-single.html">
                         <img
-                          src="{{ asset('assets/user/images/product/product-2.jpg') }}"
+                          src="{{ asset('https://outerbloom.com/cdn/shop/products/Pink-Darling-Bouquet_350x.jpg?v=1669969725') }}"
                           alt=""
                         />
                       </a>
@@ -284,10 +284,10 @@
                         <div class="rating-on" style="width: 80%"></div>
                       </div>
                       <h4 class="product-name">
-                        <a href="shop-single.html">Rock Soapwort</a>
+                        <a href="shop-single.html">Bucket Pink Besar</a>
                       </h4>
                       <div class="price-box">
-                        <span class="current-price">$50.00</span>
+                        <span class="current-price">Rp. 280.000</span>
                       </div>
                     </div>
                   </div>
@@ -297,80 +297,7 @@
                     <div class="product-image">
                       <a href="shop-single.html">
                         <img
-                          src="{{ asset('assets/user/images/product/product-3.jpg') }}"
-                          alt=""
-                        />
-                      </a>
-
-                      <span class="sticker-new label-sale">-35%</span>
-
-                      <div class="action-links">
-                        <ul>
-                          <li>
-                            <a
-                              href="cart.html"
-                              data-bs-tooltip="tooltip"
-                              data-bs-placement="left"
-                              title="Add to cart"
-                              ><i class="icon-shopping-bag"></i
-                            ></a>
-                          </li>
-                          <li>
-                            <a
-                              href="compare.html"
-                              data-bs-tooltip="tooltip"
-                              data-bs-placement="left"
-                              title="Compare"
-                              ><i class="icon-sliders"></i
-                            ></a>
-                          </li>
-                          <li>
-                            <a
-                              href="wishlist.html"
-                              data-bs-tooltip="tooltip"
-                              data-bs-placement="left"
-                              title="Add to Wishlist"
-                              ><i class="icon-heart"></i
-                            ></a>
-                          </li>
-                          <li>
-                            <a
-                              href="javascript:void(0);"
-                              data-bs-tooltip="tooltip"
-                              data-bs-placement="left"
-                              title="Quick View"
-                              data-bs-toggle="modal"
-                              data-bs-target="#exampleModal"
-                              ><i class="icon-eye"></i
-                            ></a>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div class="product-countdown">
-                        <div data-countdown="2022/12/31"></div>
-                      </div>
-                    </div>
-                    <div class="product-content text-center">
-                      <div class="rating">
-                        <div class="rating-on" style="width: 80%"></div>
-                      </div>
-                      <h4 class="product-name">
-                        <a href="shop-single.html">Scarlet Sage</a>
-                      </h4>
-                      <div class="price-box">
-                        <span class="current-price">$39.00</span>
-                        <span class="old-price">$60.00</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-product">
-                    <div class="product-image">
-                      <a href="shop-single.html">
-                        <img
-                          src="{{ asset('assets/user/images/product/product-4.jpg') }}"
+                          src="{{ asset('https://outerbloom.com/cdn/shop/products/Pink-Perfect-Bouquet_350x.jpg?v=1674705920') }}"
                           alt=""
                         />
                       </a>
@@ -423,10 +350,10 @@
                         <div class="rating-on" style="width: 80%"></div>
                       </div>
                       <h4 class="product-name">
-                        <a href="shop-single.html">Foxglove Flower</a>
+                        <a href="shop-single.html">Bucket Pink Besar</a>
                       </h4>
                       <div class="price-box">
-                        <span class="current-price">$79.00</span>
+                        <span class="current-price">Rp. 220.000</span>
                       </div>
                     </div>
                   </div>
@@ -436,7 +363,7 @@
                     <div class="product-image">
                       <a href="shop-single.html">
                         <img
-                          src="{{ asset('assets/user/images/product/product-5.jpg') }}"
+                          src="{{ asset('https://outerbloom.com/cdn/shop/products/Rose-Poetry-Bouquet-20-tangkai_350x.jpg?v=1675151039') }}"
                           alt=""
                         />
                       </a>
@@ -491,11 +418,11 @@
                         <div class="rating-on" style="width: 80%"></div>
                       </div>
                       <h4 class="product-name">
-                        <a href="shop-single.html">Summer Savory</a>
+                        <a href="shop-single.html">Bucket Medium Pink Merah</a>
                       </h4>
                       <div class="price-box">
-                        <span class="current-price">$40.00</span>
-                        <span class="old-price">$85.00</span>
+                        <span class="current-price">Rp. 195.000</span>
+                        <span class="old-price">Rp. 245.000</span>
                       </div>
                     </div>
                   </div>
@@ -833,24 +760,6 @@
             </div>
           </div>
           <div class="product-wrapper">
-            <div class="product-tab-menu">
-              <ul class="nav justify-content-center" role="tablist">
-                <li>
-                  <a class="active" data-bs-toggle="tab" href="#tab1" role="tab"
-                    >New</a
-                  >
-                </li>
-                <li>
-                  <a data-bs-toggle="tab" href="#tab2" role="tab">Featured</a>
-                </li>
-                <li>
-                  <a data-bs-toggle="tab" href="#tab3" role="tab"
-                    >Best Sellers</a
-                  >
-                </li>
-              </ul>
-            </div>
-
             <div class="tab-content product-items-tab">
               <div class="tab-pane fade show active" id="tab1" role="tabpanel">
                 <div class="swiper-container product-active">
@@ -860,7 +769,7 @@
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
-                              src="{{ asset('assets/user/images/product/product-8.jpg') }}"
+                              src="https://outerbloom.com/cdn/shop/files/Delarosa-Bouquet_350x.jpg?v=1714621345"
                               alt=""
                             />
                           </a>
@@ -915,11 +824,11 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">Lity Majesty Palm</a>
+                            <a href="shop-single.html">Bucket Besar Pink Hijau Muda</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">$19.00</span>
-                            <span class="old-price">$29.00</span>
+                            <span class="current-price">Rp. 250.000</span>
+                            <span class="old-price">Rp. 300.000</span>
                           </div>
                         </div>
                       </div>
@@ -928,7 +837,7 @@
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
-                              src="{{ asset('assets/user/images/product/product-7.jpg') }}"
+                              src="https://outerbloom.com/cdn/shop/products/Love-Medley_2_350x.jpg?v=1671439343"
                               alt=""
                             />
                           </a>
@@ -981,10 +890,10 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">Sweet Alyssum</a>
+                            <a href="shop-single.html">Bucket Kecil Pink Hijau</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">$50.00</span>
+                            <span class="current-price">Rp. 120.000</span>
                           </div>
                         </div>
                       </div>
@@ -994,7 +903,7 @@
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
-                              src="{{ asset('assets/user/images/product/product-6.jpg') }}"
+                              src="https://outerbloom.com/cdn/shop/products/Julietta-Bouquet_350x.jpg?v=1643429347"
                               alt=""
                             />
                           </a>
@@ -1049,11 +958,11 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">Wild Roses</a>
+                            <a href="shop-single.html">Bucket Pink Putih</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">$19.00</span>
-                            <span class="old-price">$21.00</span>
+                            <span class="current-price">Rp. 150.000</span>
+                            <span class="old-price">Rp. 200.000</span>
                           </div>
                         </div>
                       </div>
@@ -1062,7 +971,7 @@
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
-                              src="{{ asset('assets/user/images/product/product-5.jpg') }}"
+                              src="https://outerbloom.com/cdn/shop/products/Evergarden-Hand-Bouquet_350x.jpg?v=1595570645"
                               alt=""
                             />
                           </a>
@@ -1117,11 +1026,11 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">Summer Savory</a>
+                            <a href="shop-single.html">Bucket Kuning Merah</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">$40.00</span>
-                            <span class="old-price">$85.00</span>
+                            <span class="current-price">Rp. 140.000</span>
+                            <span class="old-price">Rp. 180.000</span>
                           </div>
                         </div>
                       </div>
@@ -1131,7 +1040,7 @@
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
-                              src="{{ asset('assets/user/images/product/product-1.jpg') }}"
+                              src="https://outerbloom.com/cdn/shop/files/Sweet-Rainbow-Bouquet_350x.jpg?v=1686643877"
                               alt=""
                             />
                           </a>
@@ -1186,11 +1095,11 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">Spring Snowflake</a>
+                            <a href="shop-single.html">Bucket Medium Boneka</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">$19.00</span>
-                            <span class="old-price">$29.00</span>
+                            <span class="current-price">Rp. 200.000</span>
+                            <span class="old-price">Rp. 250.000</span>
                           </div>
                         </div>
                       </div>
@@ -1199,7 +1108,7 @@
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
-                              src="{{ asset('assets/user/images/product/product-2.jpg') }}"
+                              src="https://outerbloom.com/cdn/shop/products/Rose-Perle-Bouquet_350x.jpg?v=1671439328"
                               alt=""
                             />
                           </a>
@@ -1252,10 +1161,10 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">Rock Soapwort</a>
+                            <a href="shop-single.html">Bucket Medium Merah Pink</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">$50.00</span>
+                            <span class="current-price">Rp. 150.000</span>
                           </div>
                         </div>
                       </div>
@@ -1265,7 +1174,7 @@
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
-                              src="{{ asset('assets/user/images/product/product-2.jpg') }}"
+                              src="https://outerbloom.com/cdn/shop/products/Millionaire-Baby-Money-Bouquet_350x.jpg?v=1638263036"
                               alt=""
                             />
                           </a>
@@ -1320,11 +1229,11 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">Rock Soapwort</a>
+                            <a href="shop-single.html">Bucket Uang 50rb x 8</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">$55.00</span>
-                            <span class="old-price">$75.00</span>
+                            <span class="current-price">Rp. 350.000</span>
+                            <span class="old-price">Rp. 400.000</span>
                           </div>
                         </div>
                       </div>
@@ -1333,7 +1242,7 @@
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
-                              src="{{ asset('assets/user/images/product/product-9.jpg') }}"
+                              src="https://outerbloom.com/cdn/shop/products/Billionaire-Baby-Money-Bouquet_82671b95-0cac-421d-ab51-26dad17efc05_350x.jpg?v=1638263030"
                               alt=""
                             />
                           </a>
@@ -1388,11 +1297,11 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">Majesty Palm</a>
+                            <a href="shop-single.html">Bucket Uang 50rb x 12</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">$19.00</span>
-                            <span class="old-price">$29.00</span>
+                            <span class="current-price">Rp. 750.000</span>
+                            <span class="old-price">Rp. 800.000</span>
                           </div>
                         </div>
                       </div>
@@ -4578,7 +4487,7 @@
       <!--Testimonial Start-->
       <div
         class="testimonial-area"
-        style="background-image: url({{ asset('assets/user/images/testimonial-bg.jpg') }})"
+        style="background-image: url({{ asset('assets/images/testimonial-bg.webp') }})"
       >
         <div class="container">
           <div class="swiper-container testimonial-active">
@@ -4586,17 +4495,15 @@
               <div class="swiper-slide">
                 <div class="single-testimonial text-center">
                   <p>
-                    Felis eu pede mollis pretium. Nullam dictum felis eu pede
-                    mollis pretium. Integer tincidunt. Cras dapibus lingua.
-                    felis eu pede mollis pretium.
+                    Sangat puas dengan pelayanannya! Buket bunga yang saya pesan datang tepat waktu, bunganya segar, dan rangkaiannya cantik sekali. Terima kasih sudah membuat momen saya jadi lebih spesial!
                   </p>
 
                   <div class="testimonial-author">
                     <img
-                      src="{{ asset('assets/user/images/testimonial-img-1.png') }}"
+                      src="https://htmldemo.net/kngu/assets/images/testimonial-img-1.png"
                       alt=""
                     />
-                    <span class="author-name">Torvi / COO</span>
+                    <span class="author-name">Ahmad Rizki</span>
                   </div>
                 </div>
               </div>
@@ -4626,220 +4533,4 @@
         </div>
       </div>
       <!--Testimonial End-->
-
-      <!--Experts Start-->
-      <div class="experts-area section-padding-5">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-9 col-sm-11">
-              <div class="section-title text-center">
-                <h2 class="title">Flower Experts</h2>
-                <p>
-                  A perfect blend of creativity, energy, communication,
-                  happiness and love. Let us arrange a smile for you.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="expert-wrapper">
-            <div class="row">
-              <div class="col-lg-3 col-sm-6">
-                <div class="single-expert text-center">
-                  <div class="expert-image">
-                    <img src="{{ asset('assets/user/images/experts/team-1.jpg') }}" alt="" />
-                  </div>
-                  <div class="expert-content">
-                    <h4 class="name">Marcos Alonso</h4>
-                    <p>Biologist</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6">
-                <div class="single-expert text-center">
-                  <div class="expert-image">
-                    <img src="{{ asset('assets/user/images/experts/team-2.jpg') }}" alt="" />
-                  </div>
-                  <div class="expert-content">
-                    <h4 class="name">Shara friken</h4>
-                    <p>Photographer</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6">
-                <div class="single-expert text-center">
-                  <div class="expert-image">
-                    <img src="{{ asset('assets/user/images/experts/team-3.jpg') }}" alt="" />
-                  </div>
-                  <div class="expert-content">
-                    <h4 class="name">Torvi greac</h4>
-                    <p>Founder</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-6">
-                <div class="single-expert text-center">
-                  <div class="expert-image">
-                    <img src="{{ asset('assets/user/images/experts/team-4.jpg') }}" alt="" />
-                  </div>
-                  <div class="expert-content">
-                    <h4 class="name">Alonso Gomej</h4>
-                    <p>Florist</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Experts End-->
-
-      <!--Blog Start-->
-      <div class="blog-area blog-bg section-padding-5">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-9 col-sm-11">
-              <div class="section-title text-center">
-                <h2 class="title">From our Blog</h2>
-                <p>
-                  A perfect blend of creativity, energy, communication,
-                  happiness and love. Let us arrange a smile for you.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="blog-wrapper">
-            <div class="swiper-container blog-active">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="single-blog">
-                    <div class="blog-image">
-                      <a href="blog-single-right-sidebar.html"
-                        ><img src="{{ asset('assets/user/images/blog/blog-01.jpg') }}" alt=""
-                      /></a>
-                    </div>
-                    <div class="blog-content">
-                      <h4 class="title">
-                        <a href="blog-single-right-sidebar.html"
-                          >Flower Beauty</a
-                        >
-                      </h4>
-                      <div class="articles-date">
-                        <p>
-                          By
-                          <span> Shopify Team HasTheme / August 12, 2022</span>
-                        </p>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incidid...
-                      </p>
-
-                      <div class="blog-footer">
-                        <a class="more" href="blog-single-right-sidebar.html"
-                          >Continue Reading</a
-                        >
-                        <p class="comment-count">
-                          <i class="icon-message-circle"></i> 0
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-blog">
-                    <div class="blog-image">
-                      <a href="blog-single-right-sidebar.html"
-                        ><img src="{{ asset('assets/user/images/blog/blog-02.jpg') }}" alt=""
-                      /></a>
-                    </div>
-                    <div class="blog-content">
-                      <h4 class="title">
-                        <a href="blog-single-right-sidebar.html"
-                          >Local Florists</a
-                        >
-                      </h4>
-                      <div class="articles-date">
-                        <p>
-                          By
-                          <span> Shopify Team HasTheme / August 12, 2022</span>
-                        </p>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incidid...
-                      </p>
-
-                      <div class="blog-footer">
-                        <a class="more" href="blog-single-right-sidebar.html"
-                          >Continue Reading</a
-                        >
-                        <p class="comment-count">
-                          <i class="icon-message-circle"></i> 0
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="single-blog">
-                    <div class="blog-image">
-                      <a href="blog-single-right-sidebar.html"
-                        ><img src="{{ asset('assets/user/images/blog/blog-03.jpg') }}" alt=""
-                      /></a>
-                    </div>
-                    <div class="blog-content">
-                      <h4 class="title">
-                        <a href="blog-single-right-sidebar.html"
-                          >Flower Power</a
-                        >
-                      </h4>
-                      <div class="articles-date">
-                        <p>
-                          By
-                          <span> Shopify Team HasTheme / August 12, 2022</span>
-                        </p>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incidid...
-                      </p>
-
-                      <div class="blog-footer">
-                        <a class="more" href="blog-single-right-sidebar.html"
-                          >Continue Reading</a
-                        >
-                        <p class="comment-count">
-                          <i class="icon-message-circle"></i> 0
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Add Arrows -->
-              <div class="swiper-next"><i class="fa fa-angle-right"></i></div>
-              <div class="swiper-prev"><i class="fa fa-angle-left"></i></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Blog End-->
-
-      <!--Newsletter Start-->
-      <div class="newsletter-area section-padding-5">
-        <div class="container">
-          <div class="newsletter-form">
-            <div class="section-title text-center">
-              <h2 class="title">Join The Colorful Bunch!</h2>
-            </div>
-            <div class="form-wrapper">
-              <input type="text" placeholder="Your email address" />
-              <button>Subscribe</button>
-              <i class="icon-mail"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Newsletter End-->
 @endsection

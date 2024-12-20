@@ -112,16 +112,10 @@
      <div class="card">
          <div class="card-body p-0">
              <div class="row g-0">
-                 <div class="col-lg-6 border-start border-end">
+                 <div class="col-lg-12 border-start border-end">
                      <div class="p-3">
                          <div class="d-flex justify-content-between align-items-center">
-                             <h4 class="card-title">Performance</h4>
-                             <div>
-                                 <button type="button" class="btn btn-sm btn-outline-light">ALL</button>
-                                 <button type="button" class="btn btn-sm btn-outline-light">1M</button>
-                                 <button type="button" class="btn btn-sm btn-outline-light">6M</button>
-                                 <button type="button" class="btn btn-sm btn-outline-light active">1Y</button>
-                             </div>
+                             <h4 class="card-title">Total Transactions</h4>
                          </div>
                          <div dir="ltr">
                              <canvas id="sales-chart" class="apex-charts"></canvas>
@@ -154,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data: {
                 labels: dates,
                 datasets: [{
-                    label: 'Total Orders',
+                    label: 'Total Transactions',
                     data: totalOrders,
                     backgroundColor: gradient,
                     borderColor: 'rgba(54, 162, 235, 1)',

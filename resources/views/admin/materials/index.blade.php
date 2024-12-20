@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
-    <h2>Manage Materials</h2>
-
+<div class="container">
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-
     <!-- Form for adding new materials -->
     <div class="card mb-4">
         <div class="card-header">Add New Material</div>

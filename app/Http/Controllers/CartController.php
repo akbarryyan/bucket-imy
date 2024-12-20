@@ -125,7 +125,7 @@ class CartController extends Controller
         // Kosongkan keranjang setelah checkout
         $cart->items()->delete();
 
-        return redirect()->route('orders.index')->with('success', 'Order placed successfully.');
+        return redirect()->route('dashboard.user')->with('success', 'Order placed successfully.');
     }
 }
 

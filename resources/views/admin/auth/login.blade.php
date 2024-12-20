@@ -37,13 +37,13 @@
                               <div class="card-body px-3 py-5">
                                    <div class="mx-auto mb-4 text-center auth-logo">
                                         <a href="index.html" class="logo-dark">
-                                             <img src="{{ asset('assets/images/logo-sm.png') }}" height="30" class="me-1" alt="logo sm">
-                                             <img src="{{ asset('assets/images/logo-dark.png') }}" height="24" alt="logo dark">
+                                             {{-- <img src="{{ asset('assets/images/logo.png') }}" height="30" class="me-1" alt="logo sm"> --}}
+                                             <img src="{{ asset('assets/images/logo.png') }}" height="44" alt="logo dark">
                                         </a>
 
                                         <a href="index.html" class="logo-light">
-                                             <img src="{{ asset('assets/images/logo-sm.png') }}" height="30" class="me-1" alt="logo sm">
-                                             <img src="{{ asset('assets/images/logo-light.png') }}" height="24" alt="logo light">
+                                             <img src="{{ asset('assets/images/logo.png') }}" height="30" class="me-1" alt="logo sm">
+                                             <img src="{{ asset('assets/images/logo.png') }}" height="24" alt="logo light">
                                         </a>
                                    </div>
 
@@ -73,20 +73,9 @@
                                                   <button class="btn btn-primary" type="submit">Sign In</button>
                                              </div>
                                         </form>
-
-                                        <p class="mt-3 fw-semibold no-span">OR sign with</p>
-
-                                        <div class="text-center">
-                                             <a href="javascript:void(0);" class="btn btn-light shadow-none"><i class='bx bxl-google fs-20'></i></a>
-                                             <a href="javascript:void(0);" class="btn btn-light shadow-none"><i class='bx bxl-facebook fs-20'></i></a>
-                                             <a href="javascript:void(0);" class="btn btn-light shadow-none"><i class='bx bxl-github fs-20'></i></a>
-                                        </div>
                                    </div> <!-- end col -->
                               </div> <!-- end card-body -->
                          </div> <!-- end card -->
-
-                         <p class="mb-0 text-center">New here? <a href="auth-signup.html" class="text-reset fw-bold ms-1">Sign Up</a></p>
-
                     </div> <!-- end col -->
                </div> <!-- end row -->
           </div>
