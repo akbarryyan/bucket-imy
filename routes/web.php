@@ -7,9 +7,12 @@ use App\Http\Controllers\ProfitController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\OrderCustomController;
 use App\Http\Controllers\ProductUserController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\MaterialController;
+use App\Http\Controllers\CustomCheckoutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TransactionController;
 
@@ -33,7 +36,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('profits/daily-pdf', [ProfitController::class, 'generateDailyProfitPDF'])->name('profits.daily-pdf');
     Route::get('profits/monthly-pdf', [ProfitController::class, 'generateMonthlyProfitPDF'])->name('profits.monthly-pdf');
     Route::get('sales-data', [DashboardController::class, 'getSalesData'])->name('salesData');
-
+    Route::get('materials', [MaterialController::class, 'index'])->name('materials.index');
+    Route::post('materials', [MaterialController::class, 'store'])->name('materials.store');
+    Route::put('materials/{material}', [MaterialController::class, 'update'])->name('materials.update');
+    Route::delete('materials/{material}', [MaterialController::class, 'destroy'])->name('materials.destroy');
 });
 
 
@@ -56,6 +62,8 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('cart/remove/{itemId}', [CartController::class, 'remove'])->name('cart.remove');
     Route::get('cart/checkout', [CartController::class, 'showCheckoutForm'])->name('cart.checkout');
     Route::post('cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout.post');
+    Route::get('cart/custom-checkout/{order_id}', [CustomCheckoutController::class, 'show'])->name('cart.customCheckout');
+    Route::post('cart/custom-checkout', [CustomCheckoutController::class, 'store'])->name('cart.customCheckout.store');
 
 });
 
@@ -66,6 +74,10 @@ Route::post('user/logout', [UserAuthController::class, 'logout'])->name('user.lo
 
 Route::get('user/register', [UserAuthController::class, 'showRegisterForm'])->name('user.register');
 Route::post('user/register', [UserAuthController::class, 'register'])->name('user.register.submit');
+
+Route::get('custom-order', [OrderCustomController::class, 'index'])->name('custom-order.index');
+Route::post('custom-order', [OrderCustomController::class, 'store'])->name('custom-order.store');
+
 
 
 

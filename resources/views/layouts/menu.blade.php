@@ -72,6 +72,15 @@
               </li>
 
               <li class="nav-item">
+                   <a class="nav-link" href="{{ route('admin.materials.index') }}">
+                        <span class="nav-icon">
+                             <iconify-icon icon="solar:bill-list-broken"></iconify-icon>
+                        </span>
+                        <span class="nav-text"> Custom Materials </span>
+                   </a>
+              </li>
+
+              <li class="nav-item">
                    <a class="nav-link" href="{{ route('admin.profits') }}">
                         <span class="nav-icon">
                              <iconify-icon icon="solar:medal-ribbons-star-linear"></iconify-icon>
