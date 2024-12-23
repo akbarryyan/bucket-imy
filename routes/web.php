@@ -76,6 +76,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/orders', [OrderController::class, 'getOrders'])->name('orders.get');
     Route::get('custom-order/{id}', [CustomOrderController::class, 'show'])->name('customOrder.show');
     Route::get('custom-order', [OrderCustomController::class, 'index'])->name('custom-order.index');
+    Route::get('/custom-orders', [OrderCustomController::class, 'getCustomOrders'])->name('customOrders.get');
     Route::post('custom-order/store', [OrderCustomController::class, 'store'])->name('customOrder.store');
     Route::post('custom-order/confirm', [OrderCustomController::class, 'confirm'])->name('customOrder.confirm');
 });

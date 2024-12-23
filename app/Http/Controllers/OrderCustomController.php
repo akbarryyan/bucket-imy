@@ -73,10 +73,17 @@ class OrderCustomController extends Controller
         }
 
         // Logika untuk konfirmasi order
-        $order->status = 'confirmed';
+        $order->status = 'Pending';
         $order->save();
 
         return redirect()->route('cart.customCheckout', ['order_id' => $request->order_id])->with('success', 'Order confirmed successfully.');
+    }
+
+    public function getCustomOrders() {
+        $user = Auth::user();
+        $customOrders = OrderCustom::where('user_id', $user->id)->get();
+
+        return response()->json($customOrders);
     }
 }
 

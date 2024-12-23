@@ -96,10 +96,9 @@
               <div class="card-footer border-0 py-2 bg-light bg-opacity-50">
                    <div class="d-flex align-items-center justify-content-between">
                         <div>
-                             <span class="text-danger"> <i class="bx bxs-down-arrow fs-12"></i> 10.6%</span>
-                             <span class="text-muted ms-1 fs-12">Last Month</span>
+                             <span class="text-muted ms-1 fs-12">Total Customers for today</span>
                         </div>
-                        <a href="#!" class="text-reset fw-semibold fs-12">View More</a>
+                        <a href="{{ route('admin.users.index') }}" class="text-reset fw-semibold fs-12">View More</a>
                    </div>
               </div> <!-- end card body -->
          </div> <!-- end card -->

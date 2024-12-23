@@ -8,6 +8,7 @@ use App\Models\OrderCustom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
@@ -31,19 +32,22 @@ class AccountController extends Controller
             'new_password' => 'nullable|string|min:8|confirmed',
         ]);
 
-        $user->name = $request->name;
-        $user->email = $request->email;
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+        ];
 
         if ($request->filled('current_password') && $request->filled('new_password')) {
             if (Hash::check($request->current_password, $user->password)) {
-                $user->password = Hash::make($request->new_password);
+                $data['password'] = Hash::make($request->new_password);
             } else {
                 return redirect()->back()->withErrors(['current_password' => 'Current password is incorrect.']);
             }
         }
 
-        $user->save();
+        DB::table('users')->where('id', $user->id)->update($data);
 
         return redirect()->route('account.index')->with('success', 'Account details updated successfully.');
     }
 }
+
