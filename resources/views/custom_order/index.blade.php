@@ -45,7 +45,11 @@
         <div class="mt-4">
             <h4>Total Price: Rp. <span id="total-price">0</span></h4>
         </div>
-        <button type="button" class="btn btn-success" id="confirm-order">Confirm Order</button>
+        <form id="confirm-order-form" method="POST" action="{{ route('customOrder.confirm') }}">
+            @csrf
+            <input type="hidden" name="order_id" id="order_id" value="">
+            <button type="submit" class="btn btn-success" id="confirm-order">Confirm Order</button>
+        </form>
     </div>
 </div>
 <!--Custom Order End-->
@@ -92,7 +96,9 @@ $(document).ready(function() {
         $('#total-price').text(totalPrice.toFixed(2));
     });
 
-    $('#confirm-order').on('click', function() {
+    $('#confirm-order').on('click', function(e) {
+        e.preventDefault();
+
         const selectedMaterials = [];
         $('#selected-materials .list-group-item').each(function() {
             const materialId = $(this).find('.remove-material-btn').data('material-id');
@@ -100,7 +106,7 @@ $(document).ready(function() {
         });
 
         $.ajax({
-            url: '{{ route("custom-order.store") }}',
+            url: '{{ route("customOrder.store") }}',
             method: 'POST',
             data: {
                 _token: '{{ csrf_token() }}',
@@ -108,16 +114,17 @@ $(document).ready(function() {
                 total_price: totalPrice.toFixed(2)
             },
             success: function(response) {
-                alert('Order confirmed!');
-                window.location.href = response.redirect_url; // Redirect to custom checkout page
+                console.log('Order creation response:', response);
+                alert('Order created successfully!');
+                $('#order_id').val(response.order_id);
+                $('#confirm-order-form').submit();
             },
             error: function(response) {
-                alert('Failed to confirm order.');
+                console.log('Order creation error:', response);
+                alert('Failed to create order.');
             }
         });
     });
 });
-
-
 </script>
 @endsection
