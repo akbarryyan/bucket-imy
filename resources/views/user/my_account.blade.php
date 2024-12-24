@@ -59,7 +59,7 @@
                                     <thead>
                                         <tr>
                                             <th class="no">No</th>
-                                            <th class="name">Name</th>
+                                            <th class="name">Payment Method</th>
                                             <th class="date">Date</th>
                                             <th class="status">Status</th>
                                             <th class="total">Total</th>
@@ -87,16 +87,8 @@
                                             <th class="action">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach($customOrders as $index => $customOrder)
-                                        <tr>
-                                            <td>{{ $index + 1 }}</td>
-                                            <td>{{ $customOrder->created_at->format('M d, Y') }}</td>
-                                            <td>{{ ucfirst($customOrder->status) }}</td>
-                                            <td>Rp. {{ number_format($customOrder->total_price, 0) }}</td>
-                                            <td><a href="{{ route('customOrder.show', $customOrder->id) }}">View</a></td>
-                                        </tr>
-                                        @endforeach
+                                    <tbody id="custom-order-table-body">
+                                        <!-- Data custom orders akan dimuat di sini melalui AJAX -->
                                     </tbody>
                                 </table>
                             </div>
@@ -157,6 +149,8 @@
 </div>
 <!--My Account End-->
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
 $(document).ready(function() {
     $('a[data-bs-toggle="pill"]').on('shown.bs.tab', function (e) {
@@ -167,15 +161,16 @@ $(document).ready(function() {
                 success: function(orders) {
                     let ordersTable = $('#order-table-body');
                     ordersTable.empty();
+                    console.log('Orders:', orders);
                     if (orders.length > 0) {
                         orders.forEach((order, index) => {
                             ordersTable.append(`
                                 <tr>
                                     <td>${index + 1}</td>
-                                    <td>${order.product_name}</td>
+                                    <td>${order.payment_method}</td>
                                     <td>${new Date(order.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
                                     <td>${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</td>
-                                    <td>Rp. ${order.total.toLocaleString()}</td>
+                                    <td>Rp. ${order.total ? order.total.toLocaleString() : 'N/A'}</td>
                                     <td><a href="/order/${order.id}">View</a></td>
                                 </tr>
                             `);
@@ -186,6 +181,33 @@ $(document).ready(function() {
                 },
                 error: function() {
                     alert('Failed to fetch orders. Please try again.');
+                }
+            });
+        } else if (e.target.hash === '#pills-custom-order') {
+            $.ajax({
+                url: '{{ route('customOrders.get') }}',
+                method: 'GET',
+                success: function(customOrders) {
+                    let customOrdersTable = $('#custom-order-table-body');
+                    customOrdersTable.empty();
+                    if (customOrders.length > 0) {
+                        customOrders.forEach((customOrder, index) => {
+                            customOrdersTable.append(`
+                                <tr>
+                                    <td>${index + 1}</td>
+                                    <td>${new Date(customOrder.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
+                                    <td>${customOrder.status.charAt(0).toUpperCase() + customOrder.status.slice(1)}</td>
+                                    <td>Rp. ${customOrder.total_price.toLocaleString()}</td>
+                                    <td><a href="/custom-order/${customOrder.id}">View</a></td>
+                                </tr>
+                            `);
+                        });
+                    } else {
+                        customOrdersTable.append('<tr><td colspan="6">No custom orders found</td></tr>');
+                    }
+                },
+                error: function() {
+                    alert('Failed to fetch custom orders. Please try again.');
                 }
             });
         }

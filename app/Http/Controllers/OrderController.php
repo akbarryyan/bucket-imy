@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class OrderController extends Controller
 {
@@ -21,6 +22,8 @@ class OrderController extends Controller
         $user = Auth::user();
         $orders = Order::where('user_id', $user->id)->get();
 
+        Log::info('Orders:', $orders->toArray());
+
         return response()->json($orders);
     }
 
@@ -31,5 +34,3 @@ class OrderController extends Controller
         return view('user.order_details', compact('order'));
     }
 }
-
-
