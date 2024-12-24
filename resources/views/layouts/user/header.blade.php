@@ -18,6 +18,7 @@
                   <li><a href="{{ route('products.index') }}">All Products</a></li>
                   <li><a href="{{ route('products.index') }}">Order</a></li>
                   <li><a href="{{ route('custom-order.index') }}">Custom Order</a></li>
+                  <li><a href="{{ route('account.index') }}">My Account</a></li>
                 </ul>
               </nav>
             </div>

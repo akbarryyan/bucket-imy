@@ -2893,17 +2893,15 @@
               <div class="swiper-slide">
                 <div class="single-testimonial text-center">
                   <p>
-                    Felis eu pede mollis pretium. Nullam dictum felis eu pede
-                    mollis pretium. Integer tincidunt. Cras dapibus lingua.
-                    felis eu pede mollis pretium.
+                    Pelayanan luar biasa! Buket bunganya persis seperti di gambar, bahkan lebih indah. Cocok untuk hadiah atau acara spesial. Pasti akan pesan lagi.
                   </p>
 
                   <div class="testimonial-author">
                     <img
-                      src="{{ asset('assets/user/images/testimonial-img-2.png') }}"
+                      src="{{ asset('https://htmldemo.net/kngu/assets/images/testimonial-img-2.png') }}"
                       alt=""
                     />
-                    <span class="author-name">Shara / Founder</span>
+                    <span class="author-name">Rahma Salsa</span>
                   </div>
                 </div>
               </div>
