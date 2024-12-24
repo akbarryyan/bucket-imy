@@ -159,29 +159,56 @@
           <div class="product-wrapper">
             <div class="swiper-container product-active">
               <div class="swiper-wrapper">
-                @foreach($featured as $product)
                 <div class="swiper-slide">
                   <div class="single-product">
                     <div class="product-image">
                       <a href="shop-single.html">
-                        @if ($product->image)
                         <img
-                          src="{{ asset('storage/' . $product->image) }}"
+                          src="{{ asset('https://outerbloom.com/cdn/shop/files/Blossom-Kiss-Bouquet_350x.jpg?v=1730714489') }}"
                           alt=""
                         />
-                        @endif
                       </a>
+                      <span class="sticker-new soldout-title">Soldout</span>
 
                       <div class="action-links">
                         <ul>
                           <li>
-                            <form action="{{ route('cart.add', $product->id) }}" method="POST" class="add-to-cart-form">
-                                @csrf
-                                <input type="hidden" name="quantity" value="1">
-                                <button type="button" class="add-to-cart-btn" data-product-id="{{ $product->id }}">
-                                    <i class="icon-shopping-bag"></i>
-                                </button>
-                            </form>
+                            <a
+                              href="cart.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to cart"
+                              ><i class="icon-shopping-bag"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="compare.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Compare"
+                              ><i class="icon-sliders"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="wishlist.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to Wishlist"
+                              ><i class="icon-heart"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0);"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Quick View"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                              ><i class="icon-eye"></i
+                            ></a>
                           </li>
                         </ul>
                       </div>
@@ -191,16 +218,488 @@
                         <div class="rating-on" style="width: 80%"></div>
                       </div>
                       <h4 class="product-name">
-                        <a href="shop-single.html">{{ $product->name }}</a>
+                        <a href="shop-single.html">Bucket Medium Orange</a>
                       </h4>
                       <div class="price-box">
-                        <span class="current-price">Rp. {{ number_format($product->price, 0) }}</span>
-                        <span class="old-price">Rp. {{ number_format($product->price + 30000, 0) }}</span>
+                        <span class="current-price">Rp. 130.000</span>
+                        <span class="old-price">Rp. 180.000</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                @endforeach
+                <div class="swiper-slide">
+                  <div class="single-product">
+                    <div class="product-image">
+                      <a href="shop-single.html">
+                        <img
+                          src="{{ asset('https://outerbloom.com/cdn/shop/products/Pink-Darling-Bouquet_350x.jpg?v=1669969725') }}"
+                          alt=""
+                        />
+                      </a>
+                      <div class="action-links">
+                        <ul>
+                          <li>
+                            <a
+                              href="cart.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to cart"
+                              ><i class="icon-shopping-bag"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="compare.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Compare"
+                              ><i class="icon-sliders"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="wishlist.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to Wishlist"
+                              ><i class="icon-heart"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0);"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Quick View"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                              ><i class="icon-eye"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-content text-center">
+                      <div class="rating">
+                        <div class="rating-on" style="width: 80%"></div>
+                      </div>
+                      <h4 class="product-name">
+                        <a href="shop-single.html">Bucket Pink Besar</a>
+                      </h4>
+                      <div class="price-box">
+                        <span class="current-price">Rp. 280.000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="single-product">
+                    <div class="product-image">
+                      <a href="shop-single.html">
+                        <img
+                          src="{{ asset('https://outerbloom.com/cdn/shop/products/Pink-Perfect-Bouquet_350x.jpg?v=1674705920') }}"
+                          alt=""
+                        />
+                      </a>
+
+                      <div class="action-links">
+                        <ul>
+                          <li>
+                            <a
+                              href="cart.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to cart"
+                              ><i class="icon-shopping-bag"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="compare.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Compare"
+                              ><i class="icon-sliders"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="wishlist.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to Wishlist"
+                              ><i class="icon-heart"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0);"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Quick View"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                              ><i class="icon-eye"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-content text-center">
+                      <div class="rating">
+                        <div class="rating-on" style="width: 80%"></div>
+                      </div>
+                      <h4 class="product-name">
+                        <a href="shop-single.html">Bucket Pink Besar</a>
+                      </h4>
+                      <div class="price-box">
+                        <span class="current-price">Rp. 220.000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="single-product">
+                    <div class="product-image">
+                      <a href="shop-single.html">
+                        <img
+                          src="{{ asset('https://outerbloom.com/cdn/shop/products/Rose-Poetry-Bouquet-20-tangkai_350x.jpg?v=1675151039') }}"
+                          alt=""
+                        />
+                      </a>
+
+                      <span class="sticker-new label-sale">-18%</span>
+
+                      <div class="action-links">
+                        <ul>
+                          <li>
+                            <a
+                              href="cart.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to cart"
+                              ><i class="icon-shopping-bag"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="compare.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Compare"
+                              ><i class="icon-sliders"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="wishlist.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to Wishlist"
+                              ><i class="icon-heart"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0);"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Quick View"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                              ><i class="icon-eye"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-content text-center">
+                      <div class="rating">
+                        <div class="rating-on" style="width: 80%"></div>
+                      </div>
+                      <h4 class="product-name">
+                        <a href="shop-single.html">Bucket Medium Pink Merah</a>
+                      </h4>
+                      <div class="price-box">
+                        <span class="current-price">Rp. 195.000</span>
+                        <span class="old-price">Rp. 245.000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="single-product">
+                    <div class="product-image">
+                      <a href="shop-single.html">
+                        <img
+                          src="{{ asset('assets/user/images/product/product-6.jpg') }}"
+                          alt=""
+                        />
+                      </a>
+
+                      <span class="sticker-new label-sale">-10%</span>
+
+                      <div class="action-links">
+                        <ul>
+                          <li>
+                            <a
+                              href="cart.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to cart"
+                              ><i class="icon-shopping-bag"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="compare.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Compare"
+                              ><i class="icon-sliders"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="wishlist.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to Wishlist"
+                              ><i class="icon-heart"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0);"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Quick View"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                              ><i class="icon-eye"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-content text-center">
+                      <div class="rating">
+                        <div class="rating-on" style="width: 80%"></div>
+                      </div>
+                      <h4 class="product-name">
+                        <a href="shop-single.html">Wild Roses</a>
+                      </h4>
+                      <div class="price-box">
+                        <span class="current-price">$19.00</span>
+                        <span class="old-price">$21.00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="single-product">
+                    <div class="product-image">
+                      <a href="shop-single.html">
+                        <img
+                          src="{{ asset('assets/user/images/product/product-7.jpg') }}"
+                          alt=""
+                        />
+                      </a>
+
+                      <div class="action-links">
+                        <ul>
+                          <li>
+                            <a
+                              href="cart.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to cart"
+                              ><i class="icon-shopping-bag"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="compare.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Compare"
+                              ><i class="icon-sliders"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="wishlist.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to Wishlist"
+                              ><i class="icon-heart"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0);"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Quick View"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                              ><i class="icon-eye"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-content text-center">
+                      <div class="rating">
+                        <div class="rating-on" style="width: 80%"></div>
+                      </div>
+                      <h4 class="product-name">
+                        <a href="shop-single.html">Sweet Alyssum</a>
+                      </h4>
+                      <div class="price-box">
+                        <span class="current-price">$50.00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="single-product">
+                    <div class="product-image">
+                      <a href="shop-single.html">
+                        <img
+                          src="{{ asset('assets/user/images/product/product-8.jpg') }}"
+                          alt=""
+                        />
+                      </a>
+
+                      <span class="sticker-new label-sale">-34%</span>
+
+                      <div class="action-links">
+                        <ul>
+                          <li>
+                            <a
+                              href="cart.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to cart"
+                              ><i class="icon-shopping-bag"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="compare.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Compare"
+                              ><i class="icon-sliders"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="wishlist.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to Wishlist"
+                              ><i class="icon-heart"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0);"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Quick View"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                              ><i class="icon-eye"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-content text-center">
+                      <div class="rating">
+                        <div class="rating-on" style="width: 80%"></div>
+                      </div>
+                      <h4 class="product-name">
+                        <a href="shop-single.html">Lity Majesty Palm</a>
+                      </h4>
+                      <div class="price-box">
+                        <span class="current-price">$19.00</span>
+                        <span class="old-price">$29.00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="single-product">
+                    <div class="product-image">
+                      <a href="shop-single.html">
+                        <img
+                          src="{{ asset('assets/user/images/product/product-9.jpg') }}"
+                          alt=""
+                        />
+                      </a>
+
+                      <span class="sticker-new soldout-title">Soldout</span>
+
+                      <div class="action-links">
+                        <ul>
+                          <li>
+                            <a
+                              href="cart.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to cart"
+                              ><i class="icon-shopping-bag"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="compare.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Compare"
+                              ><i class="icon-sliders"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="wishlist.html"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Add to Wishlist"
+                              ><i class="icon-heart"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="javascript:void(0);"
+                              data-bs-tooltip="tooltip"
+                              data-bs-placement="left"
+                              title="Quick View"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                              ><i class="icon-eye"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-content text-center">
+                      <div class="rating">
+                        <div class="rating-on" style="width: 80%"></div>
+                      </div>
+                      <h4 class="product-name">
+                        <a href="shop-single.html">Majesty Palm</a>
+                      </h4>
+                      <div class="price-box">
+                        <span class="current-price">$19.00</span>
+                        <span class="old-price">$29.00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <!-- Add Arrows -->
@@ -237,7 +736,7 @@
                   <li>Hand picked just for.</li>
                 </ul>
                 <div class="about-btn">
-                  <a href="{{ route('products.index') }}" class="btn btn-primary btn-round">More Details</a>
+                  <a href="#" class="btn btn-primary btn-round">More Details</a>
                 </div>
               </div>
             </div>
@@ -265,29 +764,57 @@
               <div class="tab-pane fade show active" id="tab1" role="tabpanel">
                 <div class="swiper-container product-active">
                   <div class="swiper-wrapper">
-                    @foreach($products as $product)
                     <div class="swiper-slide">
                       <div class="single-product">
                         <div class="product-image">
                           <a href="shop-single.html">
-                            @if ($product->image)
                             <img
-                              src="{{ asset('storage/' . $product->image) }}"
+                              src="https://outerbloom.com/cdn/shop/files/Delarosa-Bouquet_350x.jpg?v=1714621345"
                               alt=""
                             />
-                            @endif
                           </a>
+
+                          <span class="sticker-new label-sale">-34%</span>
 
                           <div class="action-links">
                             <ul>
                               <li>
-                                <form action="{{ route('cart.add', $product->id) }}" method="POST" class="add-to-cart-form">
-                                    @csrf
-                                    <input type="hidden" name="quantity" value="1">
-                                    <button type="button" class="add-to-cart-btn" data-product-id="{{ $product->id }}">
-                                        <i class="icon-shopping-bag"></i>
-                                    </button>
-                                </form>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
                               </li>
                             </ul>
                           </div>
@@ -297,16 +824,16 @@
                             <div class="rating-on" style="width: 80%"></div>
                           </div>
                           <h4 class="product-name">
-                            <a href="shop-single.html">{{ $product->name }}</a>
+                            <a href="shop-single.html">Bucket Besar Pink Hijau Muda</a>
                           </h4>
                           <div class="price-box">
-                            <span class="current-price">Rp. {{ number_format($product->price, 0) }}</span>
-                            <span class="old-price">Rp. {{ number_format($product->price + 30000, 0) }}</span>
+                            <span class="current-price">Rp. 250.000</span>
+                            <span class="old-price">Rp. 300.000</span>
                           </div>
                         </div>
                       </div>
 
-                      {{-- <div class="single-product">
+                      <div class="single-product">
                         <div class="product-image">
                           <a href="shop-single.html">
                             <img
@@ -369,9 +896,1099 @@
                             <span class="current-price">Rp. 120.000</span>
                           </div>
                         </div>
-                      </div> --}}
+                      </div>
                     </div>
-                    @endforeach
+                    <div class="swiper-slide">
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="https://outerbloom.com/cdn/shop/products/Julietta-Bouquet_350x.jpg?v=1643429347"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new label-sale">-10%</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Bucket Pink Putih</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">Rp. 150.000</span>
+                            <span class="old-price">Rp. 200.000</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="https://outerbloom.com/cdn/shop/products/Evergarden-Hand-Bouquet_350x.jpg?v=1595570645"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new label-sale">-18%</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Bucket Kuning Merah</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">Rp. 140.000</span>
+                            <span class="old-price">Rp. 180.000</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="https://outerbloom.com/cdn/shop/files/Sweet-Rainbow-Bouquet_350x.jpg?v=1686643877"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new soldout-title">Soldout</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Bucket Medium Boneka</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">Rp. 200.000</span>
+                            <span class="old-price">Rp. 250.000</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="https://outerbloom.com/cdn/shop/products/Rose-Perle-Bouquet_350x.jpg?v=1671439328"
+                              alt=""
+                            />
+                          </a>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Bucket Medium Merah Pink</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">Rp. 150.000</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="https://outerbloom.com/cdn/shop/products/Millionaire-Baby-Money-Bouquet_350x.jpg?v=1638263036"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new label-sale">-27%</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Bucket Uang 50rb x 8</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">Rp. 350.000</span>
+                            <span class="old-price">Rp. 400.000</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="https://outerbloom.com/cdn/shop/products/Billionaire-Baby-Money-Bouquet_82671b95-0cac-421d-ab51-26dad17efc05_350x.jpg?v=1638263030"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new soldout-title">Soldout</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Bucket Uang 50rb x 12</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">Rp. 750.000</span>
+                            <span class="old-price">Rp. 800.000</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-5.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new label-sale">-18%</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Summer Savory</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$40.00</span>
+                            <span class="old-price">$85.00</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-4.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Foxglove Flower</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$79.00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-6.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new label-sale">-10%</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Wild Roses</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$19.00</span>
+                            <span class="old-price">$21.00</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-3.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new label-sale">-35%</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-countdown">
+                            <div data-countdown="2020/12/31"></div>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Scarlet Sage</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$39.00</span>
+                            <span class="old-price">$60.00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-7.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Sweet Alyssum</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$50.00</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-9.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new soldout-title">Soldout</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Majesty Palm</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$19.00</span>
+                            <span class="old-price">$29.00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-8.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new label-sale">-34%</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Lity Majesty Palm</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$19.00</span>
+                            <span class="old-price">$29.00</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-1.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new soldout-title">Soldout</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Spring Snowflake</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$19.00</span>
+                            <span class="old-price">$29.00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-9.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new soldout-title">Soldout</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Majesty Palm</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$19.00</span>
+                            <span class="old-price">$29.00</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="single-product">
+                        <div class="product-image">
+                          <a href="shop-single.html">
+                            <img
+                              src="{{ asset('assets/user/images/product/product-8.jpg') }}"
+                              alt=""
+                            />
+                          </a>
+
+                          <span class="sticker-new label-sale">-34%</span>
+
+                          <div class="action-links">
+                            <ul>
+                              <li>
+                                <a
+                                  href="cart.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to cart"
+                                  ><i class="icon-shopping-bag"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="compare.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Compare"
+                                  ><i class="icon-sliders"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="wishlist.html"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Add to Wishlist"
+                                  ><i class="icon-heart"></i
+                                ></a>
+                              </li>
+                              <li>
+                                <a
+                                  href="javascript:void(0);"
+                                  data-bs-tooltip="tooltip"
+                                  data-bs-placement="left"
+                                  title="Quick View"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal"
+                                  ><i class="icon-eye"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content text-center">
+                          <div class="rating">
+                            <div class="rating-on" style="width: 80%"></div>
+                          </div>
+                          <h4 class="product-name">
+                            <a href="shop-single.html">Lity Majesty Palm</a>
+                          </h4>
+                          <div class="price-box">
+                            <span class="current-price">$19.00</span>
+                            <span class="old-price">$29.00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <!-- Add Arrows -->

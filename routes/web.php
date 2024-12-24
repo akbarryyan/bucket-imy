@@ -17,6 +17,7 @@ use App\Http\Controllers\CustomCheckoutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CustomOrderController;
 use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\DashboardUserController;
 
 Route::get('/register', function () {
     return view('welcome');
@@ -60,9 +61,10 @@ Route::middleware(['auth'])->group(function () {
         // Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
     });
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
-    Route::get('dashboard', function() {
-        return view('dashboard');
-    })->name('dashboard.user');
+    // Route::get('dashboard', function() {
+    //     return view('dashboard');
+    // })->name('dashboard.user');
+    Route::get('dashboard',[DashboardUserController::class, 'index'])->name('dashboard.user');
     Route::get('products', [ProductUserController::class, 'index'])->name('products.index');
     Route::get('cart/data', [CartController::class, 'getCartData'])->name('cart.data');
     Route::delete('cart/remove/{itemId}', [CartController::class, 'remove'])->name('cart.remove');

@@ -55,7 +55,7 @@
 <div class="col-lg-3 col-sm-6">
     <div class="single-product">
         <div class="product-image">
-            <a href="shop-single.html">
+            <a href="#">
                 @if ($product->image)
                 <img src="{{ asset('storage/' . $product->image) }}" alt="">
                 @endif
