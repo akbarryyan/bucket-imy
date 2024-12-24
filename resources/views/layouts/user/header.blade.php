@@ -24,12 +24,6 @@
           </div>
           <div class="col-lg-3">
             <div class="header-meta-info">
-              <div class="header-search">
-                <form action="#">
-                  <input type="text" placeholder="Search our store " />
-                  <button><i class="icon-search"></i></button>
-                </form>
-              </div>
               <div class="header-account">
                 <div class="header-account-list dropdown top-link">
                   <a href="#" role="button" data-bs-toggle="dropdown"

@@ -62,8 +62,6 @@
                                             <th class="name">Payment Method</th>
                                             <th class="date">Date</th>
                                             <th class="status">Status</th>
-                                            <th class="total">Total</th>
-                                            <th class="action">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="order-table-body">
@@ -84,7 +82,6 @@
                                             <th class="date">Date</th>
                                             <th class="status">Status</th>
                                             <th class="total">Total</th>
-                                            <th class="action">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="custom-order-table-body">
@@ -167,11 +164,9 @@ $(document).ready(function() {
                             ordersTable.append(`
                                 <tr>
                                     <td>${index + 1}</td>
-                                    <td>${order.payment_method}</td>
+                                    <td>${order.payment_method.toUpperCase()}</td>
                                     <td>${new Date(order.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
                                     <td>${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</td>
-                                    <td>Rp. ${order.total ? order.total.toLocaleString() : 'N/A'}</td>
-                                    <td><a href="/order/${order.id}">View</a></td>
                                 </tr>
                             `);
                         });
@@ -198,7 +193,6 @@ $(document).ready(function() {
                                     <td>${new Date(customOrder.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
                                     <td>${customOrder.status.charAt(0).toUpperCase() + customOrder.status.slice(1)}</td>
                                     <td>Rp. ${customOrder.total_price.toLocaleString()}</td>
-                                    <td><a href="/custom-order/${customOrder.id}">View</a></td>
                                 </tr>
                             `);
                         });

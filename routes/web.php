@@ -19,8 +19,8 @@ use App\Http\Controllers\Admin\CustomOrderController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\DashboardUserController;
 
-Route::get('/register', function () {
-    return view('welcome');
+Route::get('/', function () {
+    return view('user_auth.login');
 });
 
 Route::get('/test', function () {
