@@ -72,9 +72,6 @@
                             </button>
                         </form>
                     </li>
-                    <li><a href="compare.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Compare"><i class="icon-sliders"></i></a></li>
-                    <li><a href="wishlist.html" data-bs-tooltip="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="icon-heart"></i></a></li>
-                    <li><a href="javascript:void(0);" data-bs-tooltip="tooltip" data-bs-placement="left" title="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-eye"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -131,9 +128,13 @@
           </div>
       </div>
 
+      <div class="mt-4">
+          {{ $products->links() }}
+      </div>
+
 
       <!--Pagination Start-->
-      <div class="page-pagination">
+      {{-- <div class="page-pagination">
           <ul class="pagination justify-content-center">
               <li class="page-item"><a class="page-link prev" href="#">Prev</a></li>
               <li class="page-item"><a class="page-link active" href="#">1</a></li>
@@ -141,7 +142,7 @@
               <li class="page-item"><a class="page-link" href="#">3</a></li>
               <li class="page-item"><a class="page-link next" href="#">Next</a></li>
           </ul>
-      </div>
+      </div> --}}
       <!--Pagination End-->
 
 
